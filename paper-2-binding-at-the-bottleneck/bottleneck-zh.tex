@@ -1,0 +1,592 @@
+% 《把规则卡在瓶颈上》中文译本，以英文版 bottleneck.tex 为准。
+% 编译：xelatex -> bibtex -> xelatex -> xelatex（需要字体 Noto Sans CJK SC）
+\newcommand{\PaperAuthor}{Titan}
+\newcommand{\PaperAffiliation}{独立研究者}
+\newcommand{\PaperDate}{2026 年 11 月}
+
+\begin{filecontents*}[overwrite]{bottleneck-zh.bib}
+@misc{Akers2023,
+  author = {Akers, Torey},
+  title  = {{NFT} Marketplace {O}pen{S}ea Ends Its Resale Royalty Policy, Sparking Industry-Wide Backlash},
+  year   = {2023},
+  howpublished = {The Art Newspaper, 23 August},
+  url    = {https://www.theartnewspaper.com/2023/08/23/opensea-nft-marketplace-ending-resale-royalties-policy}
+}
+@misc{AlaskaPublic2025,
+  author = {{Alaska Public Media}},
+  title  = {Alaska {S}enate Committee Drops Proposed 2025 {PFD} to \$1,000 per Recipient, an Inflation-Adjusted Low},
+  year   = {2025},
+  howpublished = {News report, 2 May},
+  url    = {https://alaskapublic.org/news/politics/2025-05-02/alaska-senate-committee-drops-proposed-2025-pfd-to-1-000-per-recipient-an-inflation-adjusted-low}
+}
+@misc{APFC2026,
+  author = {{Alaska Permanent Fund Corporation}},
+  title  = {{The Fund}},
+  year   = {2026},
+  howpublished = {Web page reproducing Alaska Constitution art.~IX, \S 15; accessed 19 November},
+  url    = {https://apfc.org/the-fund/}
+}
+@article{BestEtAl2015,
+  author  = {Best, Michael Carlos and Brockmeyer, Anne and Kleven, Henrik Jacobsen and Spinnewijn, Johannes and Waseem, Mazhar},
+  title   = {Production versus Revenue Efficiency with Limited Tax Capacity: Theory and Evidence from {P}akistan},
+  journal = {Journal of Political Economy},
+  year    = {2015}, volume = {123}, number = {6}, pages = {1311--1355}
+}
+@article{BoadwayMarchandPestieau1994,
+  author  = {Boadway, Robin and Marchand, Maurice and Pestieau, Pierre},
+  title   = {Towards a Theory of the Direct-Indirect Tax Mix},
+  journal = {Journal of Public Economics},
+  year    = {1994}, volume = {55}, number = {1}, pages = {71--88}
+}
+@misc{Buterin2019,
+  author = {Buterin, Vitalik and Conner, Eric and Dudley, Rick and Slipper, Matthew and Norden, Ian and Bakhta, Abdelhamid},
+  title  = {{EIP}-1559: Fee Market Change for {ETH} 1.0 Chain},
+  year   = {2019},
+  howpublished = {Ethereum Improvement Proposal},
+  url    = {https://eips.ethereum.org/EIPS/eip-1559}
+}
+@article{CremerGahvari1993,
+  author  = {Cremer, Helmuth and Gahvari, Firouz},
+  title   = {Tax Evasion and Optimal Commodity Taxation},
+  journal = {Journal of Public Economics},
+  year    = {1993}, volume = {50}, number = {2}, pages = {261--275}
+}
+@article{DiamondMirrlees1971,
+  author  = {Diamond, Peter A. and Mirrlees, James A.},
+  title   = {Optimal Taxation and Public Production {I}: Production Efficiency},
+  journal = {American Economic Review},
+  year    = {1971}, volume = {61}, number = {1}, pages = {8--27}
+}
+@article{GuerreiroRebeloTeles2022,
+  author  = {Guerreiro, Jo{\~a}o and Rebelo, Sergio and Teles, Pedro},
+  title   = {Should Robots Be Taxed?},
+  journal = {Review of Economic Studies},
+  year    = {2022}, volume = {89}, number = {1}, pages = {279--311}
+}
+@incollection{KeenKonrad2013,
+  author    = {Keen, Michael and Konrad, Kai A.},
+  title     = {The Theory of International Tax Competition and Coordination},
+  booktitle = {Handbook of Public Economics},
+  editor    = {Auerbach, Alan J. and Chetty, Raj and Feldstein, Martin and Saez, Emmanuel},
+  volume    = {5},
+  publisher = {Elsevier},
+  address   = {Amsterdam},
+  year      = {2013}, pages = {257--328}
+}
+@article{KlevenEtAl2011,
+  author  = {Kleven, Henrik Jacobsen and Knudsen, Martin B. and Kreiner, Claus Thustrup and Pedersen, S{\o}ren and Saez, Emmanuel},
+  title   = {Unwilling or Unable to Cheat? {E}vidence from a Tax Audit Experiment in {D}enmark},
+  journal = {Econometrica},
+  year    = {2011}, volume = {79}, number = {3}, pages = {651--692}
+}
+@article{KlevenKreinerSaez2016,
+  author  = {Kleven, Henrik Jacobsen and Kreiner, Claus Thustrup and Saez, Emmanuel},
+  title   = {Why Can Modern Governments Tax So Much? {A}n Agency Model of Firms as Fiscal Intermediaries},
+  journal = {Economica},
+  year    = {2016}, volume = {83}, number = {330}, pages = {219--246}
+}
+@article{KopczukEtAl2016,
+  author  = {Kopczuk, Wojciech and Marion, Justin and Muehlegger, Erich and Slemrod, Joel},
+  title   = {Does Tax-Collection Invariance Hold? {E}vasion and the Pass-Through of State Diesel Taxes},
+  journal = {American Economic Journal: Economic Policy},
+  year    = {2016}, volume = {8}, number = {2}, pages = {251--286},
+  doi     = {10.1257/pol.20140271}
+}
+@article{KopczukSlemrod2006,
+  author  = {Kopczuk, Wojciech and Slemrod, Joel},
+  title   = {Putting Firms into Optimal Tax Theory},
+  journal = {American Economic Review},
+  year    = {2006}, volume = {96}, number = {2}, pages = {130--134}
+}
+@techreport{KorinekLockwood2026,
+  author      = {Korinek, Anton and Lockwood, Lee},
+  title       = {Public Finance in the Age of {AI}: A Primer},
+  institution = {National Bureau of Economic Research},
+  type        = {Working Paper},
+  number      = {34873},
+  year        = {2026},
+  url         = {https://www.nber.org/papers/w34873}
+}
+@misc{Lindrea2023,
+  author = {Lindrea, Brayden},
+  title  = {{NFT} Marketplace {O}pen{S}ea to Disable Royalty Enforcement Tool},
+  year   = {2023},
+  howpublished = {Cointelegraph, 18 August},
+  url    = {https://cointelegraph.com/news/opensea-disable-on-chain-royalty-enforcement-tool}
+}
+@misc{OKeefe2020,
+  author = {O{\addfontfeatures{Ligatures=TeXOff}\char"0027}Keefe, Cullen and Cihon, Peter and Garfinkel, Ben and Flynn, Carrick and Leung, Jade and Dafoe, Allan},
+  title  = {The Windfall Clause: Distributing the Benefits of {AI} for the Common Good},
+  year   = {2020},
+  howpublished = {arXiv:1912.11595},
+  url    = {https://arxiv.org/abs/1912.11595}
+}
+@misc{Roughgarden2021,
+  author = {Roughgarden, Tim},
+  title  = {Transaction Fee Mechanism Design},
+  year   = {2021},
+  howpublished = {arXiv:2106.01340},
+  url    = {https://arxiv.org/abs/2106.01340}
+}
+@misc{SastryEtAl2024,
+  author = {Sastry, Girish and Heim, Lennart and Belfield, Haydn and Anderljung, Markus and Brundage, Miles and Hazell, Julian and O{\addfontfeatures{Ligatures=TeXOff}\char"0027}Keefe, Cullen and Hadfield, Gillian K. and Ngo, Richard and Pilz, Konstantin and Gor, George and Bluemke, Emma and Shoker, Sarah and Egan, Janet and Trager, Robert F. and Avin, Shahar and Weller, Adrian and Bengio, Yoshua and Coyle, Diane},
+  title  = {Computing Power and the Governance of Artificial Intelligence},
+  year   = {2024},
+  howpublished = {arXiv:2402.08797},
+  url    = {https://arxiv.org/abs/2402.08797}
+}
+@article{Slemrod2008,
+  author  = {Slemrod, Joel},
+  title   = {Does It Matter Who Writes the Check to the Government? {T}he Economics of Tax Remittance},
+  journal = {National Tax Journal},
+  year    = {2008}, volume = {61}, number = {2}, pages = {251--275}
+}
+@article{Spengler1950,
+  author  = {Spengler, Joseph J.},
+  title   = {Vertical Integration and Antitrust Policy},
+  journal = {Journal of Political Economy},
+  year    = {1950}, volume = {58}, number = {4}, pages = {347--352}
+}
+@misc{TitanSeparation2026,
+  author = {Titan},
+  title  = {{Separating Capture from Allocation: A Commitment Model of Distribution after AI}},
+  year   = {2026},
+  howpublished = {Working paper, version 1.0}
+}
+@article{TorslovWierZucman2023,
+  author  = {T{\o}rsl{\o}v, Thomas and Wier, Ludvig and Zucman, Gabriel},
+  title   = {The Missing Profits of Nations},
+  journal = {Review of Economic Studies},
+  year    = {2023}, volume = {90}, number = {3}, pages = {1499--1534},
+  doi     = {10.1093/restud/rdac049}
+}
+@misc{Wielechowski2017,
+  author = {{Alaska Supreme Court}},
+  title  = {Wielechowski v. {S}tate of {A}laska, {N}o. {S}-16558},
+  year   = {2017},
+  howpublished = {Opinion of 25 August},
+  url    = {https://law.justia.com/cases/alaska/supreme-court/2017/s-16558.html}
+}
+\end{filecontents*}
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\setmainfont{Noto Sans CJK SC}[BoldFont={Noto Sans CJK SC Bold},ItalicFont={Noto Sans CJK SC},BoldItalicFont={Noto Sans CJK SC Bold}]
+\setsansfont{Noto Sans CJK SC}[BoldFont={Noto Sans CJK SC Bold}]
+\setmonofont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1.5pt minus 0.1pt
+\tolerance=4000
+\emergencystretch=3em
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usetikzlibrary{calc}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\hypersetup{
+  pdftitle={把规则卡在瓶颈上：AI 之后分配问题的一个执行模型},
+  pdfauthor={\PaperAuthor}
+}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{2em}
+\linespread{1.32}
+\setlist{nosep,leftmargin=2.6em}
+\setlength{\bibsep}{4pt}
+\urlstyle{same}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\proofname}{证明}
+\renewcommand{\emph}[1]{\textbf{#1}}
+
+\definecolor{twoc}{HTML}{2A78D6}
+\definecolor{outc}{HTML}{EB6834}
+\definecolor{botc}{HTML}{1BAF7A}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inksoft}{HTML}{52514E}
+\definecolor{axisgray}{HTML}{8A8984}
+\definecolor{gridgray}{HTML}{E4E3DE}
+
+\newtheoremstyle{zh}{8pt}{8pt}{\normalfont}{0pt}{\bfseries}{}{0.6em}{\thmname{#1}\thmnumber{ #2}\thmnote{（#3）}。}
+\theoremstyle{zh}
+\newtheorem{proposition}{命题}
+\newtheorem{corollary}{推论}
+
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\E}{\mathbb{E}}
+
+\title{\textbf{把规则卡在瓶颈上：\\[4pt] AI 之后分配问题的一个执行模型}}
+\author{\PaperAuthor\thanks{\PaperAffiliation。本文是英文论文 \textit{Binding at the Bottleneck: An
+Enforcement Model of Distribution after AI}（v1.0）的中文译本，内容以英文版为准。本文接续
+\citet{TitanSeparation2026}。随论文发布的脚本 \texttt{verify\_\allowbreak bottleneck.py}
+以精确计算或穷举优化的方式，检验了文中每一个闭式结果。}}
+\date{\PaperDate\\[2pt]{\small 工作论文 v1.0 · 中文译本}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent 一条分享机器产出的规则，只能发放它收得到的部分。姊妹篇证明，对自主产出支付分红，要求规则事前定死、可观察、并独立于捕获方；它同时假定规则无法被规避。本文放开这个假定：捕获方可以付出一定成本，让产出绕过规则。由此得到四个结果。第一，规则至多收到绕过它所需的成本，所以一条已经分离的规则，如果建立在容易绕开的税基上，什么也发不出来。第二，当捕获方完全相同时，规则卡在生产链的哪一环并不重要，重要的只是各环的绕行成本，而且不同环节的绕行成本可以相加。第三，当捕获方的生产率不同时，对必需投入的征收无法跟随各自的租金，最优规则由两部分组成：在产出上按份额征收，直到它的绕行成本为止；不足的部分，在瓶颈处按平均生产率补足。第四，一个不受约束的瓶颈所有者，收取的恰好是接收方自己会选择的那个征收额，并把它留给自己。因此，规则必须卡在瓶颈上，并且与瓶颈的所有者相分离。
+
+\medskip
+\noindent\textbf{关键词：}执行；规避；瓶颈；算力；分配；人工智能；交易手续费。
+
+\noindent\textbf{JEL：}D23, H21, H26, L12, O33。
+\end{abstract}
+
+\section{引言}
+
+一条规则只能分享流经它的东西。本文的姊妹篇 \citet{TitanSeparation2026} 问的是：谁可以制定分配机器产出的规则。它的回答是三个条件，合称捕获与分配的分离：规则在投资之前定死，可观察，并由不站在捕获方一边的主体来定。其中第一个条件要求，任何人都不能修改规则，\emph{也不能规避它}。那篇论文研究了修改，把规避假设掉了。本文研究的就是规避。
+
+这是两种不同的失败，而且彼此可以单独发生（表~\ref{tab:twobytwo}）。一条规则可以谁都改不了，却仍然被人绕开。一条规则可以无处可逃，却仍然每年被改写。任何一种失败都足以终结分红。
+
+\begin{table}[b]
+\centering
+\caption{规则失败的两种方式，各举一例。出处见第~\ref{sec:find} 节和姊妹篇。}
+\label{tab:twobytwo}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}@{}}
+\toprule
+ & \textbf{难以规避} & \textbf{容易规避}\\
+\midrule
+\textbf{难以修改} & EIP-1559 下被销毁的基础费：自 2021 年起每笔交易都在支付 &
+NFT 的创作者版税：由创作者设定，被交易市场跳过\\
+\textbf{容易修改} & 阿拉斯加分红：资金来自矿产权利金，金额在每年预算中重定 & 企业自愿承诺\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+规避提出了一个修改不会提出的问题：规则应该卡在\emph{哪里}？生产是一条链。芯片和能源变成算力；算力变成产出；产出被出售；销售变成利润。征收可以设在任何一环。教科书说选哪一环无关紧要；只要没有哪一环可以被绕开，这是对的 \citep{Slemrod2008}。当各环被绕开的难易不同，这个选择就决定了能收到多少 \citep{KopczukEtAl2016}。关于逃税的文献已经把其中的逻辑讲清楚了：一个税基上的最优税率取决于它有多容易被隐藏 \citep{CremerGahvari1993}；一个粗糙但藏不住的税基，值得同一个精确但藏得住的税基搭配使用
+\citep{BoadwayMarchandPestieau1994,BestEtAl2015}；而执行要靠少数负责代缴和申报的主体
+\citep{KopczukSlemrod2006,KlevenKreinerSaez2016}。就 AI 而言，算力已被指为这项技术可以被治理的那个环节 \citep{SastryEtAl2024}，对机器人、算力和 token 征税也已被当作财政收入来源加以研究 \citep{GuerreiroRebeloTeles2022,KorinekLockwood2026}。
+
+我在姊妹篇的模型里加入绕行成本，得到四个结果。规则至多收到绕过它所需的成本（命题~\ref{prop:bound}）。捕获方完全相同时，规则卡在哪里只通过这个成本起作用，而且不同环节的成本可以相加（命题~\ref{prop:inv}）。捕获方生产率不同时，最优规则有两部分：在产出上按份额征收到能执行的限度为止，其余部分对必需投入征收（命题~\ref{prop:two}）。而瓶颈的所有者，已经在收取接收方会选择的那个征收额（命题~\ref{prop:owner}）。
+
+这里没有新的工具。本文的贡献，是为后劳动情形给出一组闭式结果，以及一个被两类文献分开处理的联系：规则能够被执行的那个环节，正是其所有者最有条件实施捕获的环节。
+
+\section{模型}
+
+有测度为一的捕获方，它们的生产率 $A$ 不同，均值为 $\mu$，方差为 $s^2$，支撑集的下界为
+$\mu/2$。\footnote{这个下界保证在下文考虑的每一条规则下，每个捕获方都保持经营。}类型为 $A$
+的捕获方选择一种必需投入的数量 $k\ge 0$，我称这种投入为\emph{算力}；其私人成本为
+$k^2/2$，得到自主产出 $Ak$。人的贡献在此搁置：在姊妹篇里它们是可加可分的，下文的任何结果都不依赖它们。
+
+\paragraph{规则。} 一条规则 $(\sigma,\tau)$ 可以卡在链条的两个环节上。在\emph{产出点}，它从流经的产出中取走份额 $\sigma$。在\emph{投入点}，它对流经的每单位算力征收 $\tau$。收到的总额就是分红 $D$，平均发给测度为一的个人。
+
+\paragraph{绕行。} 捕获方可以让产出绕过产出点，每绕行一单位的成本为 $\kappa\in(0,1)$；也可以让算力绕过投入点，每绕行一单位的成本为 $b>0$。绕过某一点的部分，在那一点什么都不付。这两个成本代表的是最便宜的绕行办法，不论它是什么：隐瞒、通过中间人、迁往别的场所，或者在投入点上改用被征收投入的替代品。我称 $\kappa$ 和 $b$ 为\emph{绕行成本}，称绕行成本高的环节为\emph{瓶颈}。以 $h_o$ 和 $h_i$ 表示绕行的比例，捕获方的收益为
+\begin{equation}
+  \Pi \;=\; Ak\,\bigl[1-(1-h_o)\sigma-h_o\kappa\bigr]
+        \;-\;k\,\bigl[(1-h_i)\tau+h_i b\bigr]\;-\;\half k^2 .
+\end{equation}
+
+\paragraph{定规则者。} 分配与捕获在姊妹篇的意义上是分离的：规则在捕获方行动之前定死并被观察到，定规则者最大化 $\E[\Pi]+\omega D$，其中 $\omega>1$。回忆一下，在无法规避时，这样的定规则者选择的份额是
+\begin{equation}
+  \sigma^*=\frac{\omega-1}{2\omega-1}<\frac12 .
+\end{equation}
+再引入两个记号以节省篇幅。令 $\Gamma$ 表示定规则者相对于“没有规则”的得益，并令
+\begin{equation}
+  \gamma^*=\frac{(\omega-1)^2}{2(2\omega-1)}, \qquad e(x)=x(2-x)\quad\text{其中 }x\in[0,1].
+\end{equation}
+在完全执行下，\allowbreak $\Gamma=\gamma^*\,\E[A^2]$。函数 $e$ 从 $0$ 升到 $1$，它将衡量一项执行不完全的征收实现了这一得益的多大比例。
+
+\section{结果}
+
+\subsection{绕行上界}
+
+\begin{proposition}[绕行上界]\label{prop:bound}
+(i) 若 $\sigma>\kappa$，捕获方让全部产出绕过产出点；若 $\sigma\le\kappa$，则完全不绕行。算力与 $b$ 的情形相同。高于绕行成本的征收什么也收不到，定规则者不会设定这样的征收。
+(ii) 若规则只卡在产出点，定规则者选择 $\hat\sigma=\min\{\sigma^*,\kappa\}$，且
+\begin{equation}
+  D=\hat\sigma(1-\hat\sigma)\,\E[A^2]\;\le\;\kappa\,\E[A^2].
+\end{equation}
+当 $\kappa\to 0$ 时，分红消失，尽管分配是分离的。
+\end{proposition}
+
+规则至多收到绕过它所需的成本。\footnote{上限之所以是硬的，是因为绕行成本是线性的。如果让比例为 $h$ 的产出绕行，每单位的成本改为 $\kappa h^2/2$，捕获方会绕行 $h=\sigma/\kappa$，实际收到的份额 $\sigma(1-\sigma/\kappa)$ 至多为 $\kappa/4$。上限变软了，上界仍在。}
+姊妹篇发现，捕获方只按个人能扣住的东西来分享。这里与之对应的是：规则只按捕获方避不开的东西来征收。分离决定由谁来定份额。绕行成本决定这个决定算不算数。
+
+\subsection{规则卡在哪里重要吗？}
+
+\begin{proposition}[不变性]\label{prop:inv}
+设捕获方完全相同（\allowbreak $s=0$）。投资、利润和分红只通过总楔子 $w=\sigma\mu+\tau$ 依赖于规则，因此楔子相同的规则无论卡在哪里都是等价的。能够收到的最大楔子为 $\kappa\mu+b$，且
+\begin{equation}
+  D=\hat t\,(1-\hat t)\,\mu^2, \qquad \hat t=\min\bigl\{\sigma^*,\ \kappa+b/\mu\bigr\}.
+\end{equation}
+\end{proposition}
+
+捕获方完全相同时，教科书是对的：从产出上征收，还是从生产它的投入上征收，没有区别。各环节之间的差别只在于，在捕获方开始绕行之前能征收多少；而在这一点上，各环节是相互帮忙的。绕过一个环节并不等于绕过另一个环节，所以能够收到的楔子可以相加。一条卡在好几个环节上的规则，比只卡在其中最好的一个环节上的规则更难逃脱。\footnote{这要求各种绕行办法是相互独立的。如果一个动作（例如整个离开这个场所）可以一次绕过所有环节，那么它的成本就是总额的上限；命题~\ref{prop:floor} 讨论这一点。}
+
+\subsection{两部规则}
+
+捕获方并不相同，各环节也就在这里不再等价。产出份额按每个捕获方的产出比例向它收费。对算力的征收则对每一单位算力收同样的钱，不管它产出多少。
+
+\begin{proposition}[两部规则]\label{prop:two}
+设 $s>0$。若 $\kappa\ge\sigma^*$，最优规则为 $\sigma=\sigma^*$，\allowbreak $\tau=0$。若
+$\kappa<\sigma^*$，最优规则为
+\begin{equation}\label{eq:two}
+  \sigma=\kappa, \qquad \tau=\min\bigl\{b,\ \mu(\sigma^*-\kappa)\bigr\}.
+\end{equation}
+当 $b\ge\mu(\sigma^*-\kappa)$ 时，分红和定规则者的得益为
+\begin{equation}\label{eq:split}
+  D=\sigma^*(1-\sigma^*)\,\mu^2+\kappa(1-\kappa)\,s^2, \qquad
+  \Gamma=\gamma^*\bigl[\mu^2+e(\kappa/\sigma^*)\,s^2\bigr].
+\end{equation}
+\end{proposition}
+
+产出份额要用到它能被执行的限度为止，因为它是唯一能跟随捕获方之间差异的工具。瓶颈处的征收按平均生产率补足缺口。这个结果可以干净地拆成两块。对“平均的捕获方”，规则实现了完全执行下能实现的全部。对捕获方之间的差异，它实现了其中的 $e(\kappa/\sigma^*)$。于是规避造成的全部损失是 $\gamma^*(1-\kappa/\sigma^*)^2s^2$：它与生产率的离散程度成正比，与产出点执行不了的那部分的平方成正比。
+
+\begin{corollary}[只能卡在一处]\label{cor:one}
+设规则只能卡在一个环节上。令 $x=\min\{1,\kappa/\sigma^*\}$，
+$y=\min\{1,b/(\sigma^*\mu)\}$，\allowbreak $cv=s/\mu$。定规则者的得益在产出点为
+$\gamma^*(\mu^2+s^2)\,e(x)$，在投入点为 $\gamma^*\mu^2\,e(y)$，所以投入点更好，当且仅当
+\begin{equation}
+  e(y)\;>\;(1+cv^2)\,e(x).
+\end{equation}
+若投入点能够执行全部征收（\allowbreak $y=1$），这个条件就是
+$\kappa/\sigma^*<1-cv/\sqrt{1+cv^2}$。
+\end{corollary}
+
+瓶颈是用精准换取可执行。当捕获方彼此相似，或者产出点很容易绕开时，瓶颈胜出；当租金集中在少数几个捕获方手里、统一的征收够不着它们时，瓶颈落败（图~\ref{fig:main}）。这就是逃税普遍时利润税与营业额税之间的取舍 \citep{BestEtAl2015}，也是直接税与间接税搭配使用的理由
+\citep{BoadwayMarchandPestieau1994}，只是算力站在了营业额的位置上。
+
+举一个例子来看量级。令 $\omega=2$，于是 $\sigma^*=\frac13$；令 $cv=0.75$；并设产出点至多只能执行 $\kappa=0.1$ 的份额。那么，只卡在产出点的规则实现了完全执行下可得收益的 51\%，只卡在瓶颈的规则实现 64\%，两部规则实现 82\%。
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=2.0cm},
+    width=0.485\textwidth, height=5.8cm,
+    axis lines=left,
+    axis line style={line width=0.4pt, draw=axisgray},
+    tick style={line width=0.4pt, draw=axisgray},
+    tick align=outside,
+    ticklabel style={font=\footnotesize, text=ink},
+    label style={font=\footnotesize, text=ink},
+    title style={font=\footnotesize, text=ink, yshift=-1pt},
+    ymajorgrids, grid style={line width=0.3pt, draw=gridgray},
+    clip=false,
+]
+\nextgroupplot[
+    title={(a) 实现了完全执行下得益的多大比例（\allowbreak $cv=0.75$）},
+    xlabel={产出点的可执行程度 $\kappa/\sigma^*$},
+    xmin=0, xmax=1, ymin=0, ymax=1.08,
+    xtick={0,0.2,0.4,0.6,0.8,1},
+    ytick={0,0.25,0.5,0.75,1},
+    yticklabels={$0$,$0.25$,$0.5$,$0.75$,$1$},
+]
+\draw[gridgray!60!axisgray, line width=0.4pt] (axis cs:0.4,0) -- (axis cs:0.4,0.64);
+\addplot[outc, line width=1.2pt, dashed, domain=0:1, samples=100] {x*(2-x)};
+\addplot[botc, line width=1.2pt, dashdotted, domain=0:1, samples=2] {0.64};
+\addplot[twoc, line width=1.4pt, domain=0:1, samples=100]
+    {(1+0.5625*x*(2-x))/1.5625};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.02,0.80)
+    {两部规则};
+\node[font=\scriptsize, text=ink, anchor=north west] at (axis cs:0.52,0.625)
+    {只卡瓶颈};
+\node[font=\scriptsize, text=ink, anchor=west] at (axis cs:0.43,0.33)
+    {只卡产出点};
+\nextgroupplot[
+    title={(b) 只能卡一处时，哪一处更好},
+    xlabel={生产率的离散程度 $cv$},
+    ylabel={$\kappa/\sigma^*$},
+    ylabel style={at={(axis description cs:-0.13,0.5)}},
+    xmin=0, xmax=2, ymin=0, ymax=1.08,
+    xtick={0,0.5,1,1.5,2},
+    ytick={0,0.25,0.5,0.75,1},
+    yticklabels={$0$,$0.25$,$0.5$,$0.75$,$1$},
+]
+\addplot[name path=thr, inksoft, line width=1.2pt, domain=0:2, samples=120]
+    {1-x/sqrt(1+x^2)};
+\path[name path=floor] (axis cs:0,0) -- (axis cs:2,0);
+\addplot[botc, opacity=0.13] fill between[of=thr and floor];
+\addplot[only marks, mark=*, mark size=1.8pt, inksoft] coordinates {(0.75,0.4)};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.82,0.62)
+    {卡在产出点更好};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.06,0.06)
+    {卡在瓶颈更好};
+\node[font=\scriptsize, text=inksoft, anchor=west] at (axis cs:0.79,0.42)
+    {图 (a) 中的平手点};
+\end{groupplot}
+\coordinate (L) at ($(group c1r1.south west)!0.5!(group c1r1.south east)+(0,-1.4cm)$);
+\draw[twoc, line width=1.4pt] ($(L)+(-3.0,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {两部规则};
+\draw[outc, line width=1.2pt, dashed] ($(L)+(-0.9,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {只卡产出点};
+\draw[botc, line width=1.2pt, dashdotted] ($(L)+(1.5,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {只卡瓶颈};
+\end{tikzpicture}
+\caption{精准与可执行之间的取舍，设瓶颈能够执行全部征收。(a) 随着产出点越来越难绕开，各种规则实现了定规则者在完全执行下得益的多大比例。两种单点规则在 $\kappa/\sigma^*=0.4$ 处打平；两部规则优于两者（命题~\ref{prop:two}）。(b) 在曲线 $1-cv/\sqrt{1+cv^2}$ 下方，只能卡在一处的规则应当卡在瓶颈上（推论~\ref{cor:one}）。}
+\label{fig:main}
+\end{figure}
+
+\subsection{下限}
+
+\begin{proposition}[下限]\label{prop:floor}
+设绕过产出点的办法是迁往另一个场所，每单位成本为 $\kappa$，而其他每个场所都至少取走份额
+$\varphi$。则规则能收到任何满足 $\sigma\le\varphi+\kappa$ 的份额。
+\end{proposition}
+
+所有场所共同的下限，会一比一地加到每个场所的绕行成本上。没有下限时，只要有一个场所分文不取，其他所有场所能收的就都被压到迁移成本，这正是税收竞争的逻辑
+\citep{KeenKonrad2013}；协议的分叉和低税辖区扮演的是同样的角色。一个搬不走的瓶颈不需要下限，这是把规则卡在瓶颈上的第二个理由。
+
+\subsection{谁拥有瓶颈}
+
+到这里为止，瓶颈都没有所有者。现在假设算力由单一所有者以零边际成本供应，它在规则定死之后、捕获方投资之前设定每单位价格 $m$。捕获方完全相同，瓶颈无法被绕开。
+
+\begin{proposition}[瓶颈的所有者]\label{prop:owner}
+(i) 没有规则时，所有者定价 $m=\mu/2$，收入为 $\mu^2/4$。这正是接收方自己在瓶颈处会选择的征收额，也正是他们会得到的分红。(ii) 面对征收 $\tau$，所有者定价 $m=(\mu-\tau)/2$。分红为 $\tau(\mu-\tau)/2$，至多为 $\mu^2/8$。定规则者的最优征收为
+\begin{equation}
+  \tau=\frac{2\omega-3}{4\omega-3}\,\mu \quad\text{若 }\omega>\tfrac32,
+  \qquad \tau=0\quad\text{其他情形}.
+\end{equation}
+(iii) 从所有者的收入中取走份额 $\rho$，既不改变它的定价，也不改变下游的投资。
+\end{proposition}
+
+一个不受约束的瓶颈，就是一项私人征收：税率是接收方会定的税率，钱却付给了瓶颈的所有者。在它上面再加一项公共征收，是把一层加价叠在另一层加价上 \citep{Spengler1950}。楔子变大，投资下降，即使是只在乎接收方的定规则者，也只能收到所有者独自收到的一半。
+$\omega\le\frac32$ 的定规则者则干脆什么都不加。补救的办法是去主张第一项征收，而不是再加第二项：或者从所有者的收入中取走一个份额，或者由规则来定价，并把所得从所有者手里拿走。
+EIP-1559 对区块空间做的正是后者 \citep{Buterin2019}。无论哪一种，瓶颈的所有者此时都站在了姊妹篇里捕获方的位置上，那三个条件也就适用于它。让一个环节适合卡规则的那些特征——供应者少、无路可绕——正是让它的所有者成为捕获方的特征。
+
+\section{寻找瓶颈}\label{sec:find}
+
+模型指出了该测量什么：绕过每个环节的成本，以及捕获方之间有多不平等。表~\ref{tab:evidence}
+汇集了一些案例：同一项征收设在不同环节，或者一条规则卡在某个环节而被绕开。
+
+\begin{table}[t]
+\centering
+\caption{规则曾经卡在哪里，结果如何。}
+\label{tab:evidence}
+\small
+\renewcommand{\arraystretch}{1.28}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}@{}}
+\toprule
+规则 & 卡在哪个环节 & 结果 & 出处\\
+\midrule
+丹麦所得税 & 自行申报，对比第三方申报 & 自行申报的收入逃税率为 37\%，第三方申报的收入为
+0.3\% & \citet{KlevenEtAl2011}\\
+全球公司税 & 利润，记在企业选择的地方 & 跨国公司 36\% 的利润被转移到避税地 &
+\citet{TorslovWierZucman2023}\\
+巴基斯坦公司税 & 利润，对比营业额 & 营业额税使逃税减少，幅度最高达公司所得的 60--70\% &
+\citet{BestEtAl2015}\\
+美国各州柴油税 & 零售商，对比上游供应商 & 在上游征收提高了税收收入和税负转嫁 &
+\citet{KopczukEtAl2016}\\
+NFT 创作者版税 & 交易市场 & 最大的市场只执行 0.5\%，而创作者设定的是 5--10\%；每周版税支付从约 28{,}000 ETH 降到约 2{,}000 ETH & \citet{Akers2023}\\
+以太坊基础费 & 区块空间；未付费的区块无效 & 每笔交易都被销毁；无法用场外支付抵消 &
+\citet{Roughgarden2021}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+在规则守得住的地方，有四个特征反复出现。这个步骤是必需的，没有替代品。做这一步的主体很少。计量它的是付款人以外的人。而且它搬不走。
+
+\paragraph{在公共账本上。} NFT 的创作者版税是最干净的检验。税率由创作者事先设定并且公开，没有人改写它。但支付被交给了代币易手所在的交易市场。一旦有些市场把版税改成可选，交易就流向了它们。到 2023 年 8 月，交易量最大的市场只执行最低 0.5\% 的版税，而创作者通常设定的是 5\% 到 10\%；每周的版税支付，从 2022 年 4 月峰值时的约 28{,}000 ETH，降到 2023 年
+6 月的约 2{,}000 ETH，同期市场本身也在萎缩 \citep{Akers2023}。一个让创作者屏蔽不付版税市场的工具，本身也被绕开了——办法是让交易经由一个未被屏蔽的协议完成——并在 2023 年 8 月被撤下 \citep{Lindrea2023}。命题~\ref{prop:bound} 可以直接解读这段经过：创作者要的是
+5\% 到 10\%，而卡的那个环节，交易者几乎不花成本就能绕开；最后留下来的，是最大的市场自己愿意执行的那 0.5\%。EIP-1559 的基础费是相反的例子。它针对区块空间收取，而每笔交易都需要区块空间；不支付它的区块是无效的。由于这笔费用被销毁，出块者和用户无法用场外支付把它抵消 \citep{Roughgarden2021}。版税卡在了交易可以绕开的环节；基础费卡在任何交易都避不开的一步。
+
+\paragraph{在账本之外。} 阿拉斯加展示的是表~\ref{tab:twobytwo} 的另一半。它的基金按州宪法规定的比例获得矿产权利金 \citep{APFC2026}，这个税基在开采地计量，也搬不走。征收从来不是问题。2025 年分红降到法定公式的大约四分之一，原因是金额可以在每年的预算中重定
+\citep{Wielechowski2017,AlaskaPublic2025}。自愿承诺 \citep{OKeefe2020} 则两头都不过关。
+
+\paragraph{算力。} 对自主生产来说，可选的环节从利润开始，经过收入和计量的使用量，一直回溯到算力和能源。表~\ref{tab:evidence} 提示了它们绕行成本的排序：利润是最容易转移的税基，只由付款人自己申报的税基是最容易隐藏的。对计量使用量的征收卡在服务提供者的接口上，而可以在别处运行的模型权重就是绕开它的办法。\citet{SastryEtAl2024} 认为算力是 AI 可以被治理的环节，因为它“可探测、可排他、可量化”，并且来自“极度集中的供应链”——用本文的话说，就是
+$b$ 很高。模型对此补充三点提醒。算力是粗糙的税基：对它征收能守住平均水平，却够不着离散的部分（命题~\ref{prop:two}）。绕行成本不是常数：更高效的算法可以替代算力，而征收本身就是去寻找这种算法的理由。集中是把双刃剑（命题~\ref{prop:owner}）。同一批作者也警告说，范围划得不好的算力治理，会给隐私和权力集中带来风险。
+
+\paragraph{设计。} 把这些命题当作对协议设计的指示来读，它们说了四件事。把规则卡在每一单位都必须经过的步骤上——被纳入区块、资产自身的转移函数——而不是卡在用户可以离开的场所（命题~\ref{prop:bound}）。在绕行办法相互独立的地方，同时卡住不止一个步骤，因为它们的成本可以相加（命题~\ref{prop:inv}）。让精确的税基承担它承担得了的部分，其余交给粗糙的税基（命题~\ref{prop:two}）。把所得从“规则所卡的那一步的运营者”手里拿走（命题~\ref{prop:owner}）。在没有瓶颈的地方，跨分叉、跨场所的共同下限是替代办法（命题~\ref{prop:floor}）。
+
+\paragraph{第四个问题。} 姊妹篇把分离化成了针对任何方案的三个问题：谁能改规则，谁能看见规则，谁保留剩余。执行再加上第四个。
+\begin{enumerate}[label=Q\arabic*.,leftmargin=3em,start=4]
+\item 让一单位税基绕过规则要花多少成本？规则要的是否比这个成本少？
+\end{enumerate}
+一条要价高于自身绕行成本的规则，只是纸面上的规则。此外，第三个问题要在规则所卡的环节上再问一遍：谁拥有这个环节，他们是否留下了在那里收到的东西？
+
+\section{局限与结论}
+
+这个模型是有意做小的。绕行成本是线性的、给定的；现实中它们是凸的，因捕获方而异，并随着捕获方的学习而下降，所以一个环节是一段时间内的瓶颈，而不是永远的瓶颈。模型里只有一种必需投入。在有多种投入时，对其中一种征收还会扭曲投入组合 \citep{DiamondMirrlees1971}；只有当替代品是完全替代时，绕行成本 $b$ 才涵盖了这种代价。定规则者知道生产率的分布。瓶颈的所有者自己没有投资，这就是为什么从它的收入中取走一个份额看起来没有代价；一旦它有投资，姊妹篇的模型就适用于它，这个份额同样有上限。此外，这里没有任何测量：表~\ref{tab:evidence} 给出的是效应的方向，而不是 AI 生产中任何一个环节的 $\kappa$ 或 $b$ 有多大。
+
+姊妹篇问的是谁可以定规则。本文问的是规则必须卡在哪里。两个答案是同一个形状。一条规则要发得出分红，必须既不在捕获方手里，又挡在捕获方的路上：它无权修改，也绕不过去。第二个要求把规则拉向生产链上最窄的地方，而最窄的地方，正是捕获最彻底的地方。一条卡在瓶颈上、却没有与瓶颈所有者分离的规则，只是把圈地搬到了上游。
+
+\appendix
+\section{证明}
+
+\begin{proof}[命题~\ref{prop:bound} 的证明]
+(i) $\Pi$ 关于 $h_o$ 是线性的，斜率为 $Ak(\sigma-\kappa)$；关于 $h_i$ 也是线性的，斜率为
+$k(\tau-b)$。所以每个绕行比例如命题所述取 $0$ 或 $1$，无差异时取合规。捕获方每单位产出的负担是 $\min\{\sigma,\kappa\}$。若 $\sigma>\kappa$，把 $\sigma$ 降到 $\kappa$ 不改变任何捕获方的收益和投资，却使征收所得从零升到 $\kappa Ak$；\allowbreak $\tau$ 与 $b$ 的情形相同。
+(ii) 当 $\tau=0$ 且 $\sigma\le\kappa$ 时，捕获方选择 $k=(1-\sigma)A$，所以
+$\E[\Pi]+\omega D=\E[A^2]\,g(\sigma)$，其中
+$g(\sigma)=\half(1-\sigma)^2+\omega\sigma(1-\sigma)$ 是凹函数，在 $\sigma^*$ 处取最大值。因此 $\hat\sigma=\min\{\sigma^*,\kappa\}$，\allowbreak $D=\hat\sigma(1-\hat\sigma)\E[A^2]$。
+\end{proof}
+
+在其余证明中，只考虑 $\sigma\le\kappa$ 且 $\tau\le b$ 的规则；由命题~\ref{prop:bound}，这不失一般性。此时类型为 $A$ 的捕获方面对楔子 $w=\sigma A+\tau$，选择 $k=A-w>0$，得到
+$\half k^2$，支付 $wk$。减去没有规则时的价值 $\half\E[A^2]$，得到定规则者的得益
+\begin{equation}\label{eq:gain}
+  \Gamma(\sigma,\tau)=\E\bigl[(\omega-1)Aw-\half(2\omega-1)w^2\bigr].
+\end{equation}
+对共同的比例楔子 $w=tA$，以及对完全相同的捕获方，上式分别等于
+\[
+  \E[A^2]\,\gamma^*e(t/\sigma^*) \qquad\text{和}\qquad
+  \mu^2\gamma^*e\bigl(w/(\sigma^*\mu)\bigr).
+\]
+
+\begin{proof}[命题~\ref{prop:inv} 的证明]
+当所有捕获方都有 $A=\mu$ 时，\allowbreak $k=\mu-w$，\allowbreak $\Pi=\half k^2$，\allowbreak $D=wk$，都只通过 $w$ 依赖于规则。可行的楔子满足 $\sigma\le\kappa$ 且 $\tau\le b$，即 $w\le\kappa\mu+b$。\allowbreak $\Gamma$ 关于
+$w$ 是凹的，在 $\sigma^*\mu$ 处取最大值，所以最优楔子为 $\hat t\mu$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:two} 的证明]
+由 \eqref{eq:gain}，\allowbreak $\Gamma$ 关于 $(\sigma,\tau)$ 是凹的，当 $s>0$ 时严格凹，且
+\[
+  \frac{\partial\Gamma}{\partial\sigma}
+     =(2\omega-1)\bigl[(\sigma^*-\sigma)(\mu^2+s^2)-\tau\mu\bigr], \qquad
+  \frac{\partial\Gamma}{\partial\tau}
+     =(2\omega-1)\bigl[(\sigma^*-\sigma)\mu-\tau\bigr].
+\]
+两者在 $(\sigma^*,0)$ 处都为零；若 $\kappa\ge\sigma^*$，这一点是可行的。若
+$\kappa<\sigma^*$，在 $\sigma=\kappa$、\allowbreak $\hat\tau=\min\{b,\mu(\sigma^*-\kappa)\}$ 处计算：
+$\partial\Gamma/\partial\tau\ge 0$，除非 $\hat\tau=b$，否则取等号；并且
+$\partial\Gamma/\partial\sigma\ge(2\omega-1)(\sigma^*-\kappa)s^2>0$。这正是约束
+$\sigma\le\kappa$ 和 $\tau\le b$ 下的 Kuhn--Tucker 条件，所以 \eqref{eq:two} 是最优解。代入 $D=\E[w(A-w)]$ 和 \eqref{eq:gain} 即得 \eqref{eq:split}。一般地，令
+$x=\kappa/\sigma^*$，\allowbreak $z=\hat\tau/\bigl(\mu(\sigma^*-\kappa)\bigr)$，则
+$\Gamma=\gamma^*\bigl[(\mu^2+s^2)e(x)+\mu^2(1-x)^2e(z)\bigr]$。
+\end{proof}
+
+\begin{proof}[推论~\ref{cor:one} 的证明]
+只卡产出点时，\allowbreak $w=\hat\sigma A$，\allowbreak $\Gamma=\gamma^*(\mu^2+s^2)e(x)$。只卡投入点时，\allowbreak $w=\tau$，由 \eqref{eq:gain} 得 $\Gamma=(\omega-1)\mu\tau-\half(2\omega-1)\tau^2$，它在约束
+$\tau\le b$ 下于 $\min\{b,\sigma^*\mu\}$ 处取最大值，此时等于 $\gamma^*\mu^2e(y)$。比较两者即得条件。若 $y=1$，条件为 $e(x)<1/(1+cv^2)$，即 $(1-x)^2>cv^2/(1+cv^2)$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:floor} 的证明]
+留下的捕获方每单位产出让出 $\sigma$。迁走的捕获方让出 $\varphi+\kappa$。它留下，当且仅当
+$\sigma\le\varphi+\kappa$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:owner} 的证明]
+面对价格 $m$ 和征收 $\tau$，捕获方选择 $k=\mu-\tau-m$。所有者最大化
+$(1-\rho)\,m(\mu-\tau-m)$，因此对任何 $\rho<1$ 都定价 $m=(\mu-\tau)/2$，这就是 (iii)。当 $\tau=0$ 时，\allowbreak $m=\mu/2$，收入为 $\mu^2/4$。在一个没有所有者的瓶颈上征收 $\tau$，所得为
+$\tau(\mu-\tau)$，在 $\tau=\mu/2$ 处最大，等于 $\mu^2/4$；这也是定规则者的选择
+$\sigma^*\mu$ 在 $\omega\to\infty$ 时的极限。这就得到 (i)。对 (ii)，\allowbreak $k=m=(\mu-\tau)/2$，所以 $D=\tau k\le\mu^2/8$；把所有者的利润按捕获方的利润同样加权，定规则者的目标为
+$\half k^2+mk+\omega\tau k=\tfrac38(\mu-\tau)^2+\half\omega\tau(\mu-\tau)$。它在
+$\omega>1$ 时是凹的，在 $\tau=0$ 处的导数为 $\tfrac14(2\omega-3)\mu$。当
+$\omega>\frac32$ 时，一阶条件给出命题中的征收额。
+\end{proof}
+
+{\renewcommand{\em}{}\renewcommand{\emph}[1]{#1}
+\bibliographystyle{plainnat}
+\bibliography{bottleneck-zh}}
+
+\end{document}

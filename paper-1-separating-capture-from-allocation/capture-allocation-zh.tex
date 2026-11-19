@@ -1,0 +1,692 @@
+% 《把捕获与分配分开》中文译本，以英文版 capture-allocation.tex 为准。
+% 编译：xelatex -> bibtex -> xelatex -> xelatex（需要字体 Noto Sans CJK SC）
+\newcommand{\PaperAuthor}{Titan}
+\newcommand{\PaperAffiliation}{独立研究者}
+\newcommand{\PaperDate}{2026 年 11 月}
+
+\begin{filecontents*}[overwrite]{capture-allocation-zh.bib}
+@article{Abreu1988,
+  author  = {Abreu, Dilip},
+  title   = {On the Theory of Infinitely Repeated Games with Discounting},
+  journal = {Econometrica},
+  year    = {1988}, volume = {56}, number = {2}, pages = {383--396}
+}
+@article{AcemogluRestrepo2018,
+  author  = {Acemoglu, Daron and Restrepo, Pascual},
+  title   = {The Race between Man and Machine: Implications of Technology for Growth, Factor Shares, and Employment},
+  journal = {American Economic Review},
+  year    = {2018}, volume = {108}, number = {6}, pages = {1488--1542}
+}
+@article{AcemogluRobinson2000,
+  author  = {Acemoglu, Daron and Robinson, James A.},
+  title   = {Why Did the {W}est Extend the Franchise? {D}emocracy, Inequality, and Growth in Historical Perspective},
+  journal = {Quarterly Journal of Economics},
+  year    = {2000}, volume = {115}, number = {4}, pages = {1167--1199}
+}
+@misc{AlaskaDOR2025,
+  author = {{Alaska Department of Revenue}},
+  title  = {Department of {R}evenue Announces 2025 {P}ermanent {F}und {D}ividend Amount},
+  year   = {2025},
+  howpublished = {Press release, 19 September},
+  url    = {https://dor.alaska.gov/department-of-revenue/news-detail/2025/09/22/department-of-revenue-announces-2025-permanent-fund-dividend-amount}
+}
+@misc{AlaskaPublic2025,
+  author = {{Alaska Public Media}},
+  title  = {Alaska {S}enate Committee Drops Proposed 2025 {PFD} to \$1,000 per Recipient, an Inflation-Adjusted Low},
+  year   = {2025},
+  howpublished = {News report, 2 May},
+  url    = {https://alaskapublic.org/news/politics/2025-05-02/alaska-senate-committee-drops-proposed-2025-pfd-to-1-000-per-recipient-an-inflation-adjusted-low}
+}
+@article{ArrietaIbarra2018,
+  author  = {Arrieta-Ibarra, Imanol and Goff, Leonard and Jim{\'e}nez-Hern{\'a}ndez, Diego and Lanier, Jaron and Weyl, E. Glen},
+  title   = {Should We Treat Data as Labor? {M}oving beyond ``Free''},
+  journal = {AEA Papers and Proceedings},
+  year    = {2018}, volume = {108}, pages = {38--42}
+}
+@article{Bagwell1995,
+  author  = {Bagwell, Kyle},
+  title   = {Commitment and Observability in Games},
+  journal = {Games and Economic Behavior},
+  year    = {1995}, volume = {8}, number = {2}, pages = {271--280}
+}
+@inproceedings{Borge2017,
+  author    = {Borge, Maria and Kokoris-Kogias, Eleftherios and Jovanovic, Philipp and Gasser, Linus and Gailly, Nicolas and Ford, Bryan},
+  title     = {Proof-of-Personhood: Redemocratizing Permissionless Cryptocurrencies},
+  booktitle = {2017 IEEE European Symposium on Security and Privacy Workshops (EuroS\&PW)},
+  year      = {2017}, pages = {23--26}
+}
+@book{BrennanBuchanan1980,
+  author    = {Brennan, Geoffrey and Buchanan, James M.},
+  title     = {The Power to Tax: Analytical Foundations of a Fiscal Constitution},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {1980}
+}
+@misc{Buterin2019,
+  author = {Buterin, Vitalik and Conner, Eric and Dudley, Rick and Slipper, Matthew and Norden, Ian and Bakhta, Abdelhamid},
+  title  = {{EIP}-1559: Fee Market Change for {ETH} 1.0 Chain},
+  year   = {2019},
+  howpublished = {Ethereum Improvement Proposal},
+  url    = {https://eips.ethereum.org/EIPS/eip-1559}
+}
+@article{CongHe2019,
+  author  = {Cong, Lin William and He, Zhiguo},
+  title   = {Blockchain Disruption and Smart Contracts},
+  journal = {Review of Financial Studies},
+  year    = {2019}, volume = {32}, number = {5}, pages = {1754--1797}
+}
+@article{delRioChanona2024,
+  author  = {del Rio-Chanona, R. Maria and Laurentsyeva, Nadzeya and Wachs, Johannes},
+  title   = {Large Language Models Reduce Public Knowledge Sharing on Online {Q\&A} Platforms},
+  journal = {PNAS Nexus},
+  year    = {2024}, volume = {3}, number = {9}, pages = {pgae400},
+  doi     = {10.1093/pnasnexus/pgae400}
+}
+@inproceedings{Douceur2002,
+  author    = {Douceur, John R.},
+  title     = {The {S}ybil Attack},
+  booktitle = {Peer-to-Peer Systems (IPTPS 2002)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {2429},
+  publisher = {Springer},
+  year      = {2002}, pages = {251--260}
+}
+@article{Fischer1980,
+  author  = {Fischer, Stanley},
+  title   = {Dynamic Inconsistency, Cooperation and the Benevolent Dissembling Government},
+  journal = {Journal of Economic Dynamics and Control},
+  year    = {1980}, volume = {2}, pages = {93--107}
+}
+@article{GrossmanHart1986,
+  author  = {Grossman, Sanford J. and Hart, Oliver D.},
+  title   = {The Costs and Benefits of Ownership: A Theory of Vertical and Lateral Integration},
+  journal = {Journal of Political Economy},
+  year    = {1986}, volume = {94}, number = {4}, pages = {691--719}
+}
+@techreport{HoldenMalani2019,
+  author      = {Holden, Richard T. and Malani, Anup},
+  title       = {Can Blockchain Solve the Hold-up Problem in Contracts?},
+  institution = {National Bureau of Economic Research},
+  type        = {Working Paper},
+  number      = {25833},
+  year        = {2019},
+  url         = {https://www.nber.org/papers/w25833}
+}
+@article{JonesTonetti2020,
+  author  = {Jones, Charles I. and Tonetti, Christopher},
+  title   = {Nonrivalry and the Economics of Data},
+  journal = {American Economic Review},
+  year    = {2020}, volume = {110}, number = {9}, pages = {2819--2858}
+}
+@article{KarabarbounisNeiman2014,
+  author  = {Karabarbounis, Loukas and Neiman, Brent},
+  title   = {The Global Decline of the Labor Share},
+  journal = {Quarterly Journal of Economics},
+  year    = {2014}, volume = {129}, number = {1}, pages = {61--103}
+}
+@article{KleinCrawfordAlchian1978,
+  author  = {Klein, Benjamin and Crawford, Robert G. and Alchian, Armen A.},
+  title   = {Vertical Integration, Appropriable Rents, and the Competitive Contracting Process},
+  journal = {Journal of Law and Economics},
+  year    = {1978}, volume = {21}, number = {2}, pages = {297--326}
+}
+@incollection{KorinekStiglitz2019,
+  author    = {Korinek, Anton and Stiglitz, Joseph E.},
+  title     = {Artificial Intelligence and Its Implications for Income Distribution and Unemployment},
+  booktitle = {The Economics of Artificial Intelligence: An Agenda},
+  editor    = {Agrawal, Ajay and Gans, Joshua and Goldfarb, Avi},
+  publisher = {University of Chicago Press},
+  address   = {Chicago},
+  year      = {2019}, pages = {349--390}
+}
+@techreport{KorinekSuh2024,
+  author      = {Korinek, Anton and Suh, Donghyun},
+  title       = {Scenarios for the Transition to {AGI}},
+  institution = {National Bureau of Economic Research},
+  type        = {Working Paper},
+  number      = {32255},
+  year        = {2024},
+  url         = {https://www.nber.org/papers/w32255}
+}
+@article{KydlandPrescott1977,
+  author  = {Kydland, Finn E. and Prescott, Edward C.},
+  title   = {Rules Rather than Discretion: The Inconsistency of Optimal Plans},
+  journal = {Journal of Political Economy},
+  year    = {1977}, volume = {85}, number = {3}, pages = {473--491}
+}
+@article{Levin2003,
+  author  = {Levin, Jonathan},
+  title   = {Relational Incentive Contracts},
+  journal = {American Economic Review},
+  year    = {2003}, volume = {93}, number = {3}, pages = {835--857}
+}
+@article{MacLeodMalcomson1989,
+  author  = {MacLeod, W. Bentley and Malcomson, James M.},
+  title   = {Implicit Contracts, Incentive Compatibility, and Involuntary Unemployment},
+  journal = {Econometrica},
+  year    = {1989}, volume = {57}, number = {2}, pages = {447--480}
+}
+@article{NorthWeingast1989,
+  author  = {North, Douglass C. and Weingast, Barry R.},
+  title   = {Constitutions and Commitment: The Evolution of Institutions Governing Public Choice in Seventeenth-Century {E}ngland},
+  journal = {Journal of Economic History},
+  year    = {1989}, volume = {49}, number = {4}, pages = {803--832}
+}
+@misc{OKeefe2020,
+  author = {O{\addfontfeatures{Ligatures=TeXOff}\char"0027}Keefe, Cullen and Cihon, Peter and Garfinkel, Ben and Flynn, Carrick and Leung, Jade and Dafoe, Allan},
+  title  = {The Windfall Clause: Distributing the Benefits of {AI} for the Common Good},
+  year   = {2020},
+  howpublished = {arXiv:1912.11595. Presented at the AAAI/ACM Conference on AI, Ethics, and Society},
+  url    = {https://arxiv.org/abs/1912.11595}
+}
+@misc{Paine1797,
+  author = {Paine, Thomas},
+  title  = {{Agrarian Justice}},
+  year   = {1797},
+  howpublished = {Pamphlet. Paris and London}
+}
+@article{PerssonRolandTabellini1997,
+  author  = {Persson, Torsten and Roland, G{\'e}rard and Tabellini, Guido},
+  title   = {Separation of Powers and Political Accountability},
+  journal = {Quarterly Journal of Economics},
+  year    = {1997}, volume = {112}, number = {4}, pages = {1163--1202}
+}
+@article{Rogoff1985,
+  author  = {Rogoff, Kenneth},
+  title   = {The Optimal Degree of Commitment to an Intermediate Monetary Target},
+  journal = {Quarterly Journal of Economics},
+  year    = {1985}, volume = {100}, number = {4}, pages = {1169--1189}
+}
+@misc{Roughgarden2021,
+  author = {Roughgarden, Tim},
+  title  = {Transaction Fee Mechanism Design},
+  year   = {2021},
+  howpublished = {arXiv:2106.01340},
+  url    = {https://arxiv.org/abs/2106.01340}
+}
+@article{SaezStantcheva2016,
+  author  = {Saez, Emmanuel and Stantcheva, Stefanie},
+  title   = {Generalized Social Marginal Welfare Weights for Optimal Tax Theory},
+  journal = {American Economic Review},
+  year    = {2016}, volume = {106}, number = {1}, pages = {24--45}
+}
+@article{Sheshinski1972,
+  author  = {Sheshinski, Eytan},
+  title   = {The Optimal Linear Income-Tax},
+  journal = {Review of Economic Studies},
+  year    = {1972}, volume = {39}, number = {3}, pages = {297--302}
+}
+@article{Shumailov2024,
+  author  = {Shumailov, Ilia and Shumaylov, Zakhar and Zhao, Yiren and Papernot, Nicolas and Anderson, Ross and Gal, Yarin},
+  title   = {{AI} Models Collapse When Trained on Recursively Generated Data},
+  journal = {Nature},
+  year    = {2024}, volume = {631}, number = {8022}, pages = {755--759},
+  doi     = {10.1038/s41586-024-07566-y}
+}
+@article{Szabo1997,
+  author  = {Szabo, Nick},
+  title   = {Formalizing and Securing Relationships on Public Networks},
+  journal = {First Monday},
+  year    = {1997}, volume = {2}, number = {9}
+}
+@misc{Titan2026,
+  author = {Titan},
+  title  = {{The Sovereignty of Time: A Declaration on Distribution after AI, with Five Essays}},
+  year   = {2026},
+  howpublished = {Version 1.1 (6 November), deposited on SSRN and Zenodo}
+}
+@book{VanParijs2017,
+  author    = {Van Parijs, Philippe and Vanderborght, Yannick},
+  title     = {Basic Income: A Radical Proposal for a Free Society and a Sane Economy},
+  publisher = {Harvard University Press},
+  address   = {Cambridge, MA},
+  year      = {2017}
+}
+@misc{Wielechowski2017,
+  author = {{Alaska Supreme Court}},
+  title  = {Wielechowski v. {S}tate of {A}laska, {N}o. {S}-16558},
+  year   = {2017},
+  howpublished = {Opinion of 25 August},
+  url    = {https://law.justia.com/cases/alaska/supreme-court/2017/s-16558.html}
+}
+\end{filecontents*}
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\setmainfont{Noto Sans CJK SC}[BoldFont={Noto Sans CJK SC Bold},ItalicFont={Noto Sans CJK SC},BoldItalicFont={Noto Sans CJK SC Bold}]
+\setsansfont{Noto Sans CJK SC}[BoldFont={Noto Sans CJK SC Bold}]
+\setmonofont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{calc}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\hypersetup{
+  pdftitle={把捕获与分配分开：AI 之后分配问题的一个承诺模型},
+  pdfauthor={\PaperAuthor}
+}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{2em}
+\linespread{1.32}
+\setlist{nosep,leftmargin=2.6em}
+\urlstyle{same}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\proofname}{证明}
+\renewcommand{\emph}[1]{\textbf{#1}}
+
+\definecolor{rulec}{HTML}{2A78D6}
+\definecolor{discc}{HTML}{EB6834}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inksoft}{HTML}{52514E}
+\definecolor{axisgray}{HTML}{8A8984}
+\definecolor{gridgray}{HTML}{E4E3DE}
+
+\newtheoremstyle{zh}{8pt}{8pt}{\normalfont}{0pt}{\bfseries}{}{0.6em}{\thmname{#1}\thmnumber{ #2}\thmnote{（#3）}。}
+\theoremstyle{zh}
+\newtheorem{proposition}{命题}
+\newtheorem{corollary}{推论}
+\newtheorem{definition}{定义}
+
+\newcommand{\half}{\tfrac{1}{2}}
+
+\title{\textbf{把捕获与分配分开：\\[4pt] AI 之后分配问题的一个承诺模型}}
+\author{\PaperAuthor\thanks{\PaperAffiliation。本文是英文论文 \textit{Separating Capture from Allocation: A
+Commitment Model of Distribution after AI}（v1.0）的中文译本，内容以英文版为准。本文为
+\citet{Titan2026} 中非正式提出的一条原则给出形式化表述。文中每一个闭式结果都由随论文发布的脚本 \texttt{verify.py} 以精确计算或穷举优化的方式检验。}}
+\date{\PaperDate\\[2pt]{\small 工作论文 v1.0 · 中文译本}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent 当机器不靠人的劳动就能生产，拥有机器的人同时也决定了产出归谁。本文要问的是：其他人在什么条件下才能指望分到一份。模型中，捕获方投资于自主生产；个人手里可能有、也可能没有捕获方需要的东西。由此得到三个结果。第一，谁在产出实现之后决定分法，谁就走到角点：捕获方全部留下；偏向接收方的定规则者全部拿走，于是投资消失。第二，掌握规则的捕获方只按个人“能扣住不给的东西”来分享，无论它是事后裁量、自我承诺还是处在重复关系之中；因此当人的贡献贬值时，转移趋于零。第三，对自主产出支付正的分红，当且仅当规则在投资之前定死、公开可观察、并且由一个把接收方看得比捕获方更重的主体来定。我把这三个条件称为捕获与分配的分离，并用它们检验企业承诺、国家分红基金和区块链协议。
+
+\medskip
+\noindent\textbf{关键词：}承诺；敲竹杠；分配；人工智能；全民分红；智能合约。
+
+\noindent\textbf{JEL：}D23, D86, E61, H21, O33。
+\end{abstract}
+
+\section{引言}
+
+工资是为“可以扣住不给的东西”支付的报酬。在经济史的大部分时间里，这一点无需任何人设计就完成了分配：生产需要人的时间，拥有生产资料的人必须向那些可以拒绝出售时间的人购买它。随着机器提供越来越多生产所需的劳动，这条通道在变窄。劳动收入份额在当前这一代 AI 系统出现之前就已在下降 \citep{KarabarbounisNeiman2014}，自动化把劳动从它接手的任务中挤出
+\citep{AcemogluRestrepo2018}，而在完全自动化的模型里，工资可以直接崩塌（\citealp{KorinekSuh2024}；另见 \citealp{KorinekStiglitz2019}）。剩下的是一个过去由工资默默回答的问题：谁决定产出怎么分，又在什么时候决定？
+
+方案并不缺：全民基本收入 \citep{VanParijs2017}、公共基金分红、AI 开发者的自愿承诺
+\citep{OKeefe2020}、对自动化生产征税、向经过验证的个人发放代币的协议。人们通常比较它们发多少、发给谁。本文沿另一条轴比较：谁握有设定分法的权力，在哪个时点握有。出发点是
+\citet{Titan2026} 中非正式提出的一个主张：捕获价值的机制，不能同时是分配价值的机制。我给这个主张一个形式化表述，说明它从何而来，并标出它在哪里不再成立。
+
+模型里有一个\emph{捕获方}，它投资于不需要人参与的生产；还有个人，他们可以加上自己的贡献。产出默认归捕获方。一条规则把产出分成两部分：发给每个人的\emph{存在分红}，和对贡献的报酬。规则可以由任何人来定——捕获方、接收方或第三方——可以定在投资之前，也可以定在产出实现之后。
+
+由此得到三个结果。在裁量之下，分法是角点：站在捕获方一边的定规则者什么都不转移，站在接收方一边的定规则者全部转移，从而终结了投资（命题~\ref{prop:disc}）。每一个定规则者在一条自己无法修改的规则下都过得更好（推论~\ref{cor:bound}）。掌握规则的捕获方只为个人能扣住的东西付钱，无论它是裁量行事、自我约束，还是永远面对同一批人（命题~\ref{prop:capt}）；当贡献贬值，它的转移趋于零。对机器自己产出的那部分支付分红，当且仅当规则事前定死、可观察、并由不站在捕获方一边的主体来定（命题~\ref{prop:sep}）。
+
+这里没有新的工具。角点结果是时间不一致 \citep{KydlandPrescott1977,Fischer1980}，出现在敲竹杠问题的两侧 \citep{KleinCrawfordAlchian1978,GrossmanHart1986}。最优规则就是最优线性税
+\citep{Sheshinski1972,SaezStantcheva2016}。重复博弈下的上界是关系契约的逻辑
+\citep{MacLeodMalcomson1989,Levin2003}。对统治者的限制只有放在统治者够不着的地方才可信，这是 \citet{NorthWeingast1989} 和 \citet{AcemogluRobinson2000} 的论点；区块链作为承诺装置，已由 \citet{CongHe2019} 和 \citet{HoldenMalani2019} 研究过。本文的贡献，是把这些部件拼到“劳动的议价能力趋于零”这一情形上，并从中提炼出一个可以用于具体方案的检验。
+
+\section{模型}
+
+有一个捕获方和测度为一的同质个人。\footnote{连续统只是记号上的方便。所有结果对 $N$ 个测度各为 $1/N$ 的个人同样成立；凡需要识别单个个人偏离之处，证明都采用这一约定。}捕获方选择投资 $k\ge 0$，私人成本为 $k^2/2$。每个个人 $i$ 选择贡献 $e_i\ge 0$，私人成本为
+$e_i^2/2$。产出为
+\begin{equation}
+  Y \;=\; A\,k \;+\; \theta\,E, \qquad E=\int_0^1 e_i\,di ,
+\end{equation}
+其中 $A>0$，$\theta\ge 0$。第一项是\emph{自主产出}：它不需要个人提供任何东西。第二项是
+\emph{贡献产出}：数据、注意力、创作、残余劳动——一个人可以扣住不给的任何东西。这类贡献并没有变得无关紧要。用自身输出训练的模型会退化 \citep{Shumailov2024}，而提供过训练数据的公共论坛，在这类模型发布之后活跃度下降了 \citep{delRioChanona2024}。但成问题的正是它们的分量。比值 $\theta/A$ 衡量生产在多大程度上仍依赖个人能扣住的东西；后劳动情形就是
+$\theta/A\to 0$。
+
+\paragraph{捕获。} 除非规则另有规定，全部产出归捕获方。我用\emph{捕获}指这一默认状态，用
+\emph{捕获方}指它所偏向的一方——在现实中，就是模型、算力或出售产出的平台的所有者。
+
+\paragraph{分配。} 一条规则是一对 $(\sigma,s)\in[0,1]^2$，它向每个个人支付
+\begin{equation}
+  t_i \;=\; \sigma A k \;+\; s\,\theta e_i .
+\end{equation}
+第一项是\emph{存在分红}：自主产出的一个份额 $\sigma$，平均发给每个人，与其贡献无关——即把
+\citet{Paine1797} 的“地租”用在机器上。第二项是\emph{贡献报酬}：个人自己贡献的价值中的一个份额 $s$。记 $D=\sigma A k$ 为分红，$T=D+s\theta E$ 为总转移。收益为
+\begin{equation}
+  \Pi=(1-\sigma)Ak+(1-s)\theta E-\half k^2, \qquad
+  u_i=\sigma Ak+s\theta e_i-\half e_i^2 ,
+\end{equation}
+且 $U=\int u_i\,di$。这里内置了三个假设。转移非负，且从产出中支付：个人没有可以质押的东西。成本是私人信息，所以规则可以以产出为条件，不能以利润为条件。规则是线性的；第~\ref{sec:ext} 节讨论更丰富的规则。
+
+\paragraph{定规则者。} 规则由一个\emph{定规则者}选择，它最大化 $\Pi+\omega U$，
+$\omega\ge 0$。权重 $\omega$ 是定规则者对“个人手中一单位产出”相对于“捕获方手中一单位产出”的估值，即 \citet{SaezStantcheva2016} 意义上的边际社会福利权重。捕获方自己的 $\omega=0$。功利主义者的 $\omega=1$；由于效用是线性的，它对纯粹的再分配无差异。$\omega>1$ 的定规则者看重向个人的再分配：因为个人的边际效用更高，因为他们是选民，或者因为定规则者就是个人自己（$\omega\to\infty$）。
+
+\paragraph{时序。} 在\emph{事前规则}下，定规则者先选 $(\sigma,s)$；捕获方和个人观察到它，再选择 $k$ 和 $e_i$；产出实现，并按规则分配。在\emph{裁量}下，$k$ 和 $e_i$ 先被选定，定规则者在产出实现之后才选 $(\sigma,s)$。均衡指子博弈完美均衡。总剩余 $W=\Pi+U$ 在
+$k=A$、$e_i=\theta$ 处最大，此时取得最优值 $(A^2+\theta^2)/2$。
+
+\section{结果}
+
+\subsection{裁量}
+
+\begin{proposition}[裁量导致角点]\label{prop:disc}
+设规则在 $k$ 和 $e$ 沉没之后，由 $\omega\neq 1$ 的定规则者选择。均衡结果唯一。
+\begin{enumerate}[label=(\roman*)]
+\item 若 $\omega<1$，定规则者什么都不转移（$\sigma=s=0$）。于是 $k=A$，$e=0$，
+      $(\Pi,U)=(A^2/2,\,0)$。
+\item 若 $\omega>1$，定规则者全部转移（$\sigma=s=1$）。于是 $k=0$，$e=\theta$，
+      $(\Pi,U)=(0,\,\theta^2/2)$。自主产出为零。
+\end{enumerate}
+\end{proposition}
+
+产出一旦存在，换一种分法并不改变它的大小，所以定规则者的问题是线性的，解在角点。称 (i) 为
+\emph{圈地}，(ii) 为\emph{没收}。两者都是敲竹杠。圈地之下，贡献在得到报酬之前已经沉没；它们得不到报酬，所以不会被做出。没收之下，投资在被分配之前已经沉没；它被拿走，所以不会被做出。握有裁量权的接收方得不到机器的产出。他们得到的，是一份不再包含机器的产出的全部。
+
+\subsection{事前规则}
+
+\begin{proposition}[规则]\label{prop:rule}
+设 $(\sigma,s)$ 在 $k$ 和 $e$ 被选择之前定死并被观察到。则 $k=(1-\sigma)A$，
+$e=s\theta$，且
+\begin{equation}
+  \Pi=\half(1-\sigma)^2A^2+s(1-s)\theta^2, \qquad
+  U=\sigma(1-\sigma)A^2+\half s^2\theta^2 .
+\end{equation}
+定规则者的最优规则为
+\begin{equation}\label{eq:opt}
+  \sigma^*(\omega)=\max\Bigl\{0,\ \frac{\omega-1}{2\omega-1}\Bigr\}, \qquad
+  s^*(\omega)=\begin{cases} 1/(2-\omega) & \text{若 } \omega\le 1,\\[2pt]
+                             1 & \text{若 } \omega\ge 1.\end{cases}
+\end{equation}
+\end{proposition}
+
+有三个定规则者值得点名。捕获方（$\omega=0$）选择 $(0,\half)$：它按买方垄断的价格为贡献付钱，此外什么都不付。功利主义者（$\omega=1$）选择 $(0,1)$，达到最优。接收方（$\omega\to\infty$）选择 $(\half,1)$。表~\ref{tab:regimes} 汇总了各种结果，图~\ref{fig:main}(a) 画出了分红份额随 $\omega$ 的变化。
+
+分红份额具有最优线性税的形式，$\sigma^*=(1-g)/(1-g+\varepsilon)$，其中 $g=1/\omega$ 是被征税一方相对于接收方的权重，$\varepsilon=1$ 是二次成本所蕴含的投资弹性。\footnote{若成本为
+$k^{1+1/\varepsilon}/(1+1/\varepsilon)$，份额为 $(\omega-1)/(\omega-1+\omega\varepsilon)$，至多为 $1/(1+\varepsilon)$。}即使只在乎接收方的定规则者，也会止步于一半。过了这一点，税基缩小得比份额增长得快。
+
+\begin{corollary}[每个定规则者都宁愿被约束]\label{cor:bound}
+设 $\theta>0$ 且 $\omega\neq 1$。定规则者自己的目标函数，在其最优规则下严格高于裁量之下。捕获方得到 $A^2/2+\theta^2/4$ 而不是 $A^2/2$。自己定规则的接收方得到
+$A^2/4+\theta^2/2$ 而不是 $\theta^2/2$。
+\end{corollary}
+
+修改分法的权利，对握有它的人来说价值小于零。
+
+\begin{table}[t]
+\centering
+\caption{按“谁定、何时定”划分的均衡结果。$D=\sigma Ak$ 为存在分红，$T$ 为总转移。最优为 $k=A$，$e=\theta$。}
+\label{tab:regimes}
+\small
+\setlength{\tabcolsep}{5.2pt}
+\begin{tabular}{@{}llccccccc@{}}
+\toprule
+时序 & 定规则者 & $(\sigma,s)$ & $k$ & $e$ & $D$ & $T$ & $\Pi$ & $U$\\
+\midrule
+裁量 & $\omega<1$ & $(0,0)$ & $A$ & $0$ & $0$ & $0$ & $\half A^2$ & $0$\\[2pt]
+     & $\omega>1$ & $(1,1)$ & $0$ & $\theta$ & $0$ & $\theta^2$ & $0$ & $\half\theta^2$\\
+\addlinespace[5pt]
+事前规则 & 捕获方，$\omega=0$ & $(0,\half)$ & $A$ & $\half\theta$ & $0$
+           & $\tfrac14\theta^2$ & $\half A^2+\tfrac14\theta^2$ & $\tfrac18\theta^2$\\[2pt]
+         & 功利主义者，$\omega=1$ & $(0,1)$ & $A$ & $\theta$ & $0$ & $\theta^2$
+           & $\half A^2$ & $\half\theta^2$\\[2pt]
+         & 接收方，$\omega\to\infty$ & $(\half,1)$ & $\half A$ & $\theta$
+           & $\tfrac14A^2$ & $\tfrac14A^2+\theta^2$ & $\tfrac18A^2$
+           & $\tfrac14A^2+\half\theta^2$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{捕获方会分享什么}
+
+假设由捕获方控制分法。它可以裁量行事。它可以用合同或代码约束自己。或者博弈可以重复，使个人能够惩罚不付钱的捕获方。一个由捕获方运行的方案只有这三种运作方式，而它们有一个共同性质。
+
+\begin{proposition}[捕获方控制]\label{prop:capt}
+设 $\omega=0$。
+\begin{enumerate}[label=(\alph*)]
+\item \emph{裁量。} $T=0$。
+\item \emph{承诺。} 捕获方的最优线性规则是 $(0,\half)$，支付 $T=\theta^2/4$。若它可以
+      承诺任意支付表 $t(e_i)\ge 0$，则支付 $T=\theta^2/2$，不给个人留下任何剩余。两种
+      情况下都有 $D=0$。
+\item \emph{重复。} 把裁量博弈无限重复，贴现因子 $\delta\in(0,1)$，捕获方在每期期末可以
+      自由做出任何非负转移。在每一个子博弈完美均衡的每一期，
+      \begin{equation}\label{eq:bound}
+        T_t\;\le\;\frac{\delta}{1-\delta}\cdot\frac{\theta^2}{2}.
+      \end{equation}
+      一个平稳的贡献份额 $s$ 可以被维持，当且仅当 $s\le\delta$。
+\end{enumerate}
+在每种情形下，$T\le c\,\theta^2$，其中常数 $c$ 不依赖于 $A$。
+\end{proposition}
+
+捕获方为它否则会失去的东西付钱。承诺让它可以购买贡献。重复让个人可以用“停止贡献”的威胁来强制付款。两者都没有给它为“存在”付钱的理由，而这个威胁的价值，至多等于它所扣住的东西。罢工、抵制和数据禁运是同一件工具，三者随着 $\theta$ 下降一起变弱。以捕获方不受干预时生产的自主产出 $A^2$ 来衡量，它分享的部分随 $\theta/A\to 0$ 而消失（图~\ref{fig:main}(b)）。
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=1.9cm},
+    width=0.485\textwidth, height=5.7cm,
+    axis lines=left,
+    axis line style={line width=0.4pt, draw=axisgray},
+    tick style={line width=0.4pt, draw=axisgray},
+    tick align=outside,
+    ticklabel style={font=\footnotesize, text=ink},
+    label style={font=\footnotesize, text=ink},
+    title style={font=\footnotesize, text=ink, yshift=-1pt},
+    xlabel style={at={(axis description cs:0.5,-0.22)}, anchor=north},
+    ymajorgrids, grid style={line width=0.3pt, draw=gridgray},
+    clip=false,
+]
+\nextgroupplot[
+    title={(a) 分红份额 $\sigma$：取决于谁定规则},
+    xlabel={定规则者对接收方的权重 $\omega$},
+    xmin=0, xmax=4, ymin=-0.035, ymax=1.1,
+    xtick={0,1,2,3,4},
+    xticklabels={{\shortstack{0\\[-1pt]{\scriptsize 捕获方}}},
+                 {\shortstack{1\\[-1pt]{\scriptsize 功利主义者}}},
+                 {\shortstack{2\\[-1pt]{\scriptsize\phantom{y}}}},
+                 {\shortstack{3\\[-1pt]{\scriptsize\phantom{y}}}},
+                 {\shortstack{4\\[-1pt]{\scriptsize\phantom{y}}}}},
+    ytick={0,0.5,1}, yticklabels={$0$,$\tfrac12$,$1$},
+]
+\addplot[rulec, line width=1.2pt, samples at={0,1,1.02,...,4}]
+    {x<=1 ? 0 : (x-1)/(2*x-1)};
+\addplot[discc, line width=1.2pt, dashed, domain=0:1, samples=2] {0};
+\addplot[discc, line width=1.2pt, dashed, domain=1:4, samples=2] {1};
+\node[font=\scriptsize, text=ink, anchor=south east] at (axis cs:4,1.005)
+    {裁量：$\sigma=1$，但 $k=0$};
+\node[font=\scriptsize, text=ink, anchor=north east] at (axis cs:4,0.30)
+    {事前规则：$\sigma^*(\omega)$};
+\node[font=\scriptsize, text=ink, anchor=south] at (axis cs:0.5,0.012)
+    {$\sigma=0$};
+\nextgroupplot[
+    title={(b) 到达个人的产出份额 $T/Y$},
+    xlabel={人的贡献的价值 $\theta/A$},
+    xmin=0, xmax=2, ymin=-0.035, ymax=1.1,
+    xtick={0,0.5,1,1.5,2},
+    xticklabels={{\shortstack{0\\[-1pt]{\scriptsize 后劳动}}},
+                 {\shortstack{0.5\\[-1pt]{\scriptsize\phantom{y}}}},
+                 {\shortstack{1\\[-1pt]{\scriptsize\phantom{y}}}},
+                 {\shortstack{1.5\\[-1pt]{\scriptsize\phantom{y}}}},
+                 {\shortstack{2\\[-1pt]{\scriptsize\phantom{y}}}}},
+    ytick={0,0.3333,0.6667,1}, yticklabels={$0$,$\tfrac13$,$\tfrac23$,$1$},
+]
+\addplot[rulec, line width=1.2pt, domain=0:2, samples=120]
+    {(2/9+x^2)/(2/3+x^2)};
+\addplot[rulec, line width=1.2pt, dashdotted, domain=0:2, samples=120]
+    {(x^2/4)/(1+x^2/2)};
+\addplot[discc, line width=1.2pt, dashed, domain=0:2, samples=2] {0};
+\node[font=\scriptsize, text=ink, anchor=south east] at (axis cs:1.42,0.86)
+    {独立定规则者的规则（$\omega=2$）};
+\node[font=\scriptsize, text=ink, anchor=south east] at (axis cs:2,0.35)
+    {捕获方自己定的规则};
+\node[font=\scriptsize, text=ink, anchor=south east] at (axis cs:2,0.012)
+    {捕获方的裁量};
+\end{groupplot}
+\coordinate (L) at ($(group c1r1.south west)!0.5!(group c2r1.south east)+(0,-2.1cm)$);
+\draw[rulec, line width=1.2pt] ($(L)+(-2.6,0)$) -- ++(0.65,0)
+    node[right, text=ink, font=\scriptsize] {事前规则};
+\draw[discc, line width=1.2pt, dashed] ($(L)+(0.6,0)$) -- ++(0.65,0)
+    node[right, text=ink, font=\scriptsize] {裁量};
+\end{tikzpicture}
+\caption{两个核心结果。(a) 在裁量之下，分给个人的自主产出份额是角点，而在上角点处已没有自主产出可分（命题~\ref{prop:disc}）；事前规则给出内点份额 $\sigma^*(\omega)$
+（命题~\ref{prop:rule}）。(b) 捕获方分享的部分随人的贡献贬值而消失（命题~\ref{prop:capt}）；在分离的规则下，份额收敛到 $\sigma^*$，此处为 $\tfrac13$
+（命题~\ref{prop:sep}）。}
+\label{fig:main}
+\end{figure}
+
+\subsection{分离}
+
+\begin{definition}\label{def:sep}
+若以下三个条件成立，则称分配与捕获\emph{分离}。
+\begin{enumerate}[label=(S\arabic*)]
+\item \emph{预先承诺。} 规则在投资做出之前定死，产出实现之后任何人都不能修改或规避它。
+\item \emph{可观察。} 捕获方和个人在行动之前能观察到现行规则。
+\item \emph{独立。} 定规则者把接收方看得比捕获方更重：$\omega>1$。
+\end{enumerate}
+\end{definition}
+
+S3 排除的不只是捕获方。一个从捕获方利润中分得一部分的定规则者——作为所有者、债权人或征税机关——其行为如同一个 $\omega$ 更低的定规则者。若它本身的权重是 $(1,\omega_0)$，并把自己在利润中的份额估值为 $\rho$，它最大化的是 $(1+\rho)\Pi+\omega_0U$，这正是权重为
+$\omega_0/(1+\rho)$ 的定规则者的问题。在“规则没有分掉的那部分”里持有足够大的利益，会把任何定规则者变成捕获方。
+
+\begin{proposition}[分离]\label{prop:sep}
+设 $\omega\neq 1$。存在分红 $D$ 在均衡中严格为正，当且仅当 S1、S2、S3 同时成立。此时
+\begin{equation}
+  \sigma^*=\frac{\omega-1}{2\omega-1}<\frac12, \qquad
+  D=\frac{\omega(\omega-1)}{(2\omega-1)^2}\,A^2 .
+\end{equation}
+\end{proposition}
+
+这就是“捕获与分配必须分离”这一主张的形式内容。单看任何一个条件都不令人意外；内容在于三者的合取。想再分配是不够的：有 S3 而没有 S1，结局是没收。有承诺也是不够的：有 S1 而没有 S3，得到的是捕获方自己的规则。有三点说明，使这个结果保持诚实。
+
+第一，S1 对接收方的约束和对所有者的一样强。握有裁量权的接收方会走到没收。分离不是把分法交给另一方；它是把分法从所有人的事后之手中拿走。
+
+第二，分离是分红的必要条件，不是总量更大的充分条件。分离规则下的总剩余比捕获方自己规则下的总剩余高出 $\theta^2/8-\sigma^{*2}A^2/2$，当人的贡献还重要时（$\theta/A>2\sigma^*$）为正，不重要时为负。在后劳动极限下，分红要付出产出的代价，因为它抑制投资；它必须由赋予接收者的权重来辩护。
+
+第三，模型把这个权重当作给定。它确立的是一个条件命题：任何想让个人分到机器自己产出的一部分的人，都需要全部三个条件，缺少其中任何一个，分红就完全消失。
+
+\section{扩展}\label{sec:ext}
+
+\paragraph{竞争。} 设有 $m\ge 2$ 个捕获方，各自拥有上述技术。
+
+\begin{proposition}[竞争]\label{prop:comp}
+(i) 在裁量下，无论 $m$ 是多少，没有捕获方支付任何东西。(ii) 在承诺下，每个捕获方都设
+$\sigma_j=0$。若贡献不可排他，即每一份贡献都使所有捕获方受益，则每个捕获方设
+$s_j=1/(m+1)$，总转移为 $\bigl(\tfrac{m}{m+1}\bigr)^2\theta^2$。若贡献可排他，竞争把
+$s$ 推到一，$T=\theta^2$。
+\end{proposition}
+
+竞争为可以被带到别处去的东西付钱。存在无法被带到别处去，所以再多的捕获方也产生不出分红。可排他性——一项可执行的、拒绝他人使用自己数据的权利
+\citep{ArrietaIbarra2018,JonesTonetti2020}——能提高贡献的所得，但它本身就是一条分配规则，需要由捕获方之外的人来执行。
+
+\paragraph{更丰富的规则。} 在完全信息下，定规则者可以用一个对自主产出的固定索取权
+$F\le A^2/2$ 取代按比例的分红，这不会扭曲投资。份额所代表的，正是使固定索取权不可行的东西：规则是在 $A$ 已知之前写下的。命题~\ref{prop:disc}、\ref{prop:capt} 和
+\ref{prop:sep} 都不依赖线性。在裁量下，任何定规则者仍然要么什么都不转移，要么全部转移；捕获方仍然不支付任何无条件的东西，且上界~\eqref{eq:bound} 是对任意转移证明的；对自主产出的正索取权仍然需要 S1--S3。
+
+\paragraph{价格。} 模型只有一种商品，没有产品市场。捕获方之间的竞争可能通过降价把自主产出让渡给买方。这帮助的是仍有收入可花的人。它不会为那些唯一资产就是劳动的人创造收入。
+
+\section{检验的应用}\label{sec:test}
+
+命题~\ref{prop:sep} 可以化为三个问题，用来问任何方案。
+\begin{enumerate}[label=Q\arabic*.,leftmargin=3em]
+\item 产出实现之后，有没有任何会从另一种分法中获益的一方，能够修改规则或规避规则？
+\item 受规则约束的人，能否在行动之前核实规则，并在事后核实转移？
+\item 设定规则或能够修订规则的人，是否保留规则没有分掉的任何部分？
+\end{enumerate}
+若答案依次为“否、是、否”，方案通过。不通过的方案，无论它宣布的比率是多少，模型预测它长期而言不会对自主产出支付分红。
+
+\paragraph{自愿承诺。} \citet{OKeefe2020} 提议 AI 开发者预先承诺捐出任何极大利润的一个份额。在模型里，这是一条由捕获方写下的、$\sigma>0$ 的规则。命题~\ref{prop:capt}(b) 说，利润最大化的捕获方不会写下它，所以这种承诺必须依靠利润之外的动机，或依靠外部压力。无论哪一种，Q1 和 Q3 给出同样的答案：写下条款的一方保留剩余，而除非有别人能够执行这一条款，同一方也可以把它撤销。提议的作者自己也说，为这样的条款建立有意义的监督与执行机制是一项重大任务。
+
+\paragraph{国家分红。} 阿拉斯加自 1982 年起用其石油收入基金的收益向居民支付分红，金额由法律中的一个公式确定。2016 年州长否决了约一半的拨款；2017 年州最高法院裁定，分红受制于普通的拨款与否决程序 \citep{Wielechowski2017}。公式仍在法律里，但金额如今由每年的预算决定。2025 年公式对应的金额约为每人 3{,}900 美元，预算实际支付 1{,}000 美元，按实际购买力计是该项目设立以来最低的一次 \citep{AlaskaPublic2025,AlaskaDOR2025}。规则是公开的，所以
+Q2 满足。但它每年都可以被修改（Q1），修改者是一个会把没有分掉的部分花掉的议会（Q3）。国家并非这条原则的例外：当它保留剩余时，它就是捕获方。
+
+\paragraph{链上规则。} 一个代码不可变、状态公开的合约，对于经它结算的一切，天然满足 S1 和
+S2；这正是区块链被当作承诺装置来分析的原因
+\citep{Szabo1997,CongHe2019,HoldenMalani2019}。以太坊的手续费机制展示了分离可以大规模运行。2021 年 8 月之前，出块者获得全部交易费。在 EIP-1559 \citep{Buterin2019} 之下，基础费由一个公开公式根据此前区块的拥挤程度确定，并被销毁，而不是付给出块者。
+\citet{Roughgarden2021} 说明了销毁为何重要：若基础费付给出块者，出块者和用户就可以用场外支付把它抵消。捕获——纳入和排序交易的权力——与手续费的分配被分开了。这条规则仍然可以改，但只能通过整个网络的分叉，而不是由它所约束的出块者裁量决定。销毁的收益按持有比例归于代币持有者，而不是归于“人”；这个例子所证明的是，一个捕获方可以被持久地排除在它曾经控制的分配之外。
+
+一个旨在向“人”支付的协议还有更多问题要解决，而这三个问题指出了问题在哪里。部署者可以升级的合约，就是部署者可以修改的规则（Q1）。链上规则只看得见在链上结算的东西，而自主产出大多在别处生产和出售，所以捕获方可以让产出绕过规则来规避它（仍是 Q1）；模型假设掉了这个测量问题。获得未分配剩余的治理方就是剩余索取者，命题~\ref{prop:capt} 适用于它（Q3）。此外，存在分红要求每人只有一份索取权：在身份可以伪造的地方 \citep{Douceur2002,Borge2017}，分红流向伪造成本最低的人，这是换了名字的捕获。这些都是尚未解决的设计问题。本文的检验并不解决它们。它说明的是：在一个协议宣称的比率具有任何意义之前，其中哪些必须先被解决。
+
+\section{局限与结论}
+
+这个模型是有意做小的。它把定规则者的权重当作给定，因此没有回答谁应当握有定规则的权力，也没有回答 $\omega>1$ 的定规则者如何产生并保持独立；任命定规则者本身就是一个分配决定，即
+\citet{BrennanBuchanan1980} 和 \citet{PerssonRolandTabellini1997} 所讨论的宪制问题。效用是线性的，这低估了利害所在：在边际效用递减时，功利主义者也会选择分红，而个人一无所得的结果，代价也比模型所记录的更大。技术是可加的，个人是同质的，自主产出被假定为可测量。不可撤销是一个极端：永远不能修改的规则也永远不能被纠正，现实的设计要在承诺与灵活之间权衡
+\citep{Rogoff1985}。S1 的要求比看上去要少。一项在下一轮投资之前宣布、且由仍然满足 S3 的定规则者做出的修订，不过是一条新的事前规则。本文的结果针对的是谁可以修改规则、何时可以修改——不能是剩余索取者，不能在事后——而不是规则究竟应不应该可以修改。
+
+工资无需任何人设计就解决了分配，因为需要劳动的人必须付钱给能够扣住劳动的人。无论什么来取代工资，都必须被设计出来，而这个设计问题比看上去要窄。它主要不是比率的问题。捕获方可以修改的比率是零。接收方可以修改的比率是一，但乘的是零。分红只存在于两者之间，而这个“之间”只存在于这样的地方：规则事前定死，受它约束的人看得见，并且不在保留余额的人手里。这是一个关于制度的陈述，对技术保持沉默：一部宪法、一个独立机构，或者公共账本上的一份合约，都可以满足它，也都可以不满足它。
+
+% ----------------------------------------------------------------------------
+\appendix
+\section{证明}
+
+\begin{proof}[命题~\ref{prop:disc} 的证明]
+当 $k$ 和 $e$ 已沉没时，$\Pi+\omega U=Y-\half k^2-\half\omega\!\int\! e_i^2\,di+(\omega-1)T$，其中 $T=\sigma Ak+s\theta E$。只有最后一项依赖于规则。若 $\omega<1$，定规则者最小化 $T$：只要 $k>0$ 就取 $\sigma=0$，只要 $E>0$ 就取 $s=0$。预见到这一点，捕获方最大化
+$Ak-\half k^2$，选择 $k=A$；没有个人会贡献，因为任何贡献都会遇到 $s=0$。若 $\omega>1$，定规则者最大化 $T$：只要 $k>0$ 就取 $\sigma=1$，于是任何 $k>0$ 给捕获方带来
+$-\half k^2<0$，故 $k=0$；只要 $E>0$ 就取 $s=1$，故 $e=\theta$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:rule} 的证明]
+给定 $(\sigma,s)$，捕获方最大化 $(1-\sigma)Ak-\half k^2$，个人 $i$ 最大化
+$s\theta e_i-\half e_i^2$（分红与 $e_i$ 无关）。因此 $k=(1-\sigma)A$，$e=s\theta$，代入即得
+$\Pi$ 和 $U$。定规则者的目标为 $A^2g(\sigma)+\theta^2h(s)$，其中
+$g(\sigma)=\half(1-\sigma)^2+\omega\sigma(1-\sigma)$，$h(s)=s(1-s)+\half\omega s^2$。
+$g'(\sigma)=(\omega-1)-(2\omega-1)\sigma$ 关于 $\sigma$ 是线性的。若 $\omega\le 1$，则
+$g'(0)\le 0$ 且 $g'(1)=-\omega\le 0$，故 $g$ 递减，$\sigma^*=0$。若 $\omega>1$，则 $g$
+严格凹且 $g'(0)>0$，故 $\sigma^*=(\omega-1)/(2\omega-1)\in(0,\half)$。其次，
+$h'(s)=1-(2-\omega)s$。若 $\omega\le 1$，$h$ 严格凹，$h'$ 在 $s=1/(2-\omega)\le 1$ 处为零。若 $\omega>1$，在 $[0,1]$ 上 $h'(s)\ge\min\{1,\omega-1\}>0$，故 $s^*=1$。
+\end{proof}
+
+\begin{proof}[推论~\ref{cor:bound} 的证明]
+命题~\ref{prop:disc} 中的结果，在 $\omega<1$ 时就是固定规则 $(0,0)$ 的结果，在 $\omega>1$
+时就是 $(1,1)$ 的结果。这两条规则在承诺下都可用，且都不是最优的，因为 $s^*(\omega)>0$ 且
+$\sigma^*(\omega)<1$；$g$ 和 $h$ 的最大值点唯一，故不等式严格。两个数值由命题~\ref{prop:rule} 得出。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:capt} 的证明]
+(a) 即命题~\ref{prop:disc}(i)。
+
+(b) 线性情形即命题~\ref{prop:rule} 取 $\omega=0$：$T=s\theta\cdot s\theta=\theta^2/4$。对一般的支付表，个人不贡献就能保证得到 $t(0)\ge 0$，故均衡中 $t_i\ge\half e_i^2$，且
+$T\ge\half\!\int\! e_i^2\,di\ge\half E^2$。因此捕获方的利润至多为
+$Ak-\half k^2+\theta E-\half E^2\le\half A^2+\half\theta^2$，等号仅当 $k=A$、
+$e_i=\theta$、$t_i=\half\theta^2$ 对所有 $i$ 成立时取到。对不少于 $\theta$ 的贡献支付
+$\half\theta^2$、否则不支付的支付表达到这个上界（无差异时按对捕获方有利的方式决断）。不以贡献为条件的支付会一比一地降低利润，故 $D=0$。
+
+(c) 在每一个历史上都有两个事实。\emph{保底水平：}捕获方选择 $k=A$ 并且不支付，就能在每期保证得到 $\half A^2$，因为 $\theta E\ge 0$；个人不贡献就能保证得到 $0$，因为转移非负。
+\emph{联合剩余：}任一期中，$\Pi_t+U_t=Ak-\half k^2+\theta E-\half\!\int\!
+e_i^2\,di\le\half A^2+\theta E-\half E^2\le\half(A^2+\theta^2)$，由 Jensen 不等式得出。固定一个均衡和一个捕获方应当支付 $T_t$ 的历史，令 $V$ 为它支付后从下一期起的延续价值。若它不支付，其延续价值至少为 $A^2/(2(1-\delta))$。只有当
+$-T_t+\delta V\ge\delta A^2/(2(1-\delta))$ 时支付才是最优的。由联合剩余和个人的保底水平，
+$V\le(A^2+\theta^2)/(2(1-\delta))$。两个不等式合并即得 \eqref{eq:bound}。
+
+对平稳情形，设只要捕获方一直支付 $s\theta e_i$，个人就贡献 $e=s\theta$，一旦违约则不再贡献。违约之后博弈回到命题~\ref{prop:disc}(i)，它把捕获方压在其保底水平上，因此不存在更严厉的惩罚 \citep{Abreu1988}。在均衡路径上，捕获方每期得到 $\half A^2+s(1-s)\theta^2$，在支付阶段应付 $s^2\theta^2$。它会支付，当且仅当
+$s^2\theta^2\le\delta s(1-s)\theta^2/(1-\delta)$，即 $s\le\delta$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:sep} 的证明]
+\emph{充分性。} 命题~\ref{prop:rule} 取 $\omega>1$，得 $\sigma^*\in(0,\half)$，
+$k=(1-\sigma^*)A=\omega A/(2\omega-1)$，故 $D=\sigma^*Ak>0$，如所述。
+
+\emph{必要性。} 设 S1 不成立。则产出实现时生效的分法是在那一刻选择的，命题~\ref{prop:disc} 适用：$D=0$，因为 $\sigma=0$（若 $\omega<1$）或 $k=0$（若
+$\omega>1$）。设 S2 不成立，即规则已定但未被观察到。则 $k$ 无法对实际选定的规则做出反应，定规则者的选择是把 $k$ 视为给定时的最优反应 \citep{Bagwell1995}。若 $k=0$，则 $D=0$。若 $k>0$，当 $\omega<1$ 时该最优反应是 $\sigma=0$；当 $\omega>1$ 时是 $\sigma=1$，而捕获方对此的最优反应是 $k=0$，矛盾。故在每个均衡中 $D=0$。设 S3 不成立且 $\omega<1$。则由命题~\ref{prop:disc} 和~\ref{prop:rule}，无论哪种时序都有 $\sigma=0$。
+\end{proof}
+
+\begin{proof}[命题~\ref{prop:comp} 的证明]
+捕获方 $j$ 的产出为 $Ak_j+\theta E_j$，规则为 $(\sigma_j,s_j)$。(i) 在裁量下，每个捕获方的收益随其自身的转移一比一地下降。(ii) 在承诺下，$\sigma_j$ 降低 $j$ 的利润而不影响其他任何东西，故 $\sigma_j=0$。若贡献不可排他，则对所有 $j$ 有 $E_j=E$，个人最大化
+$\theta e_iS-\half e_i^2$，其中 $S=\sum_j s_j$，故 $e=\theta S$。捕获方 $j$ 从贡献中得到
+$(1-s_j)\theta^2S$，一阶条件对每个 $j$ 都是 $s_j=1-S$。因此 $s_j=1/(m+1)$，
+$S=m/(m+1)$，$T=S\theta\cdot\theta S$。若贡献可排他，每个个人把贡献交给出价份额最高的捕获方，Bertrand 竞争给出 $s=1$，$e=\theta$，$T=\theta^2$。
+\end{proof}
+
+{\renewcommand{\em}{}\renewcommand{\emph}[1]{#1}
+\bibliographystyle{plainnat}
+\bibliography{capture-allocation-zh}}
+
+\end{document}

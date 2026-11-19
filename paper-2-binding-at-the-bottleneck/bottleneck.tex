@@ -1,0 +1,807 @@
+% ============================================================================
+%  Binding at the Bottleneck:
+%  An Enforcement Model of Distribution after AI
+%
+%  Single self-contained source: text, figure (pgfplots) and bibliography.
+%  Build:  latexmk -pdf bottleneck.tex
+%          (or: pdflatex, bibtex, pdflatex, pdflatex)
+%
+%  AUTHOR-FILL ITEMS -- edit the macros below before any submission.
+% ============================================================================
+\newcommand{\PaperAuthor}{Titan}
+\newcommand{\PaperAffiliation}{Independent researcher}
+\newcommand{\PaperDate}{November 2026}
+\newcommand{\PaperVersion}{Working paper, version 1.0}
+% ============================================================================
+
+\begin{filecontents*}[overwrite]{bottleneck.bib}
+@misc{Akers2023,
+  author = {Akers, Torey},
+  title  = {{NFT} Marketplace {O}pen{S}ea Ends Its Resale Royalty Policy, Sparking Industry-Wide Backlash},
+  year   = {2023},
+  howpublished = {The Art Newspaper, 23 August},
+  url    = {https://www.theartnewspaper.com/2023/08/23/opensea-nft-marketplace-ending-resale-royalties-policy}
+}
+@misc{AlaskaPublic2025,
+  author = {{Alaska Public Media}},
+  title  = {Alaska {S}enate Committee Drops Proposed 2025 {PFD} to \$1,000 per Recipient, an Inflation-Adjusted Low},
+  year   = {2025},
+  howpublished = {News report, 2 May},
+  url    = {https://alaskapublic.org/news/politics/2025-05-02/alaska-senate-committee-drops-proposed-2025-pfd-to-1-000-per-recipient-an-inflation-adjusted-low}
+}
+@misc{APFC2026,
+  author = {{Alaska Permanent Fund Corporation}},
+  title  = {{The Fund}},
+  year   = {2026},
+  howpublished = {Web page reproducing Alaska Constitution art.~IX, \S 15; accessed 19 November},
+  url    = {https://apfc.org/the-fund/}
+}
+@article{BestEtAl2015,
+  author  = {Best, Michael Carlos and Brockmeyer, Anne and Kleven, Henrik Jacobsen and Spinnewijn, Johannes and Waseem, Mazhar},
+  title   = {Production versus Revenue Efficiency with Limited Tax Capacity: Theory and Evidence from {P}akistan},
+  journal = {Journal of Political Economy},
+  year    = {2015}, volume = {123}, number = {6}, pages = {1311--1355}
+}
+@article{BoadwayMarchandPestieau1994,
+  author  = {Boadway, Robin and Marchand, Maurice and Pestieau, Pierre},
+  title   = {Towards a Theory of the Direct-Indirect Tax Mix},
+  journal = {Journal of Public Economics},
+  year    = {1994}, volume = {55}, number = {1}, pages = {71--88}
+}
+@misc{Buterin2019,
+  author = {Buterin, Vitalik and Conner, Eric and Dudley, Rick and Slipper, Matthew and Norden, Ian and Bakhta, Abdelhamid},
+  title  = {{EIP}-1559: Fee Market Change for {ETH} 1.0 Chain},
+  year   = {2019},
+  howpublished = {Ethereum Improvement Proposal},
+  url    = {https://eips.ethereum.org/EIPS/eip-1559}
+}
+@article{CremerGahvari1993,
+  author  = {Cremer, Helmuth and Gahvari, Firouz},
+  title   = {Tax Evasion and Optimal Commodity Taxation},
+  journal = {Journal of Public Economics},
+  year    = {1993}, volume = {50}, number = {2}, pages = {261--275}
+}
+@article{DiamondMirrlees1971,
+  author  = {Diamond, Peter A. and Mirrlees, James A.},
+  title   = {Optimal Taxation and Public Production {I}: Production Efficiency},
+  journal = {American Economic Review},
+  year    = {1971}, volume = {61}, number = {1}, pages = {8--27}
+}
+@article{GuerreiroRebeloTeles2022,
+  author  = {Guerreiro, Jo{\~a}o and Rebelo, Sergio and Teles, Pedro},
+  title   = {Should Robots Be Taxed?},
+  journal = {Review of Economic Studies},
+  year    = {2022}, volume = {89}, number = {1}, pages = {279--311}
+}
+@incollection{KeenKonrad2013,
+  author    = {Keen, Michael and Konrad, Kai A.},
+  title     = {The Theory of International Tax Competition and Coordination},
+  booktitle = {Handbook of Public Economics},
+  editor    = {Auerbach, Alan J. and Chetty, Raj and Feldstein, Martin and Saez, Emmanuel},
+  volume    = {5},
+  publisher = {Elsevier},
+  address   = {Amsterdam},
+  year      = {2013}, pages = {257--328}
+}
+@article{KlevenEtAl2011,
+  author  = {Kleven, Henrik Jacobsen and Knudsen, Martin B. and Kreiner, Claus Thustrup and Pedersen, S{\o}ren and Saez, Emmanuel},
+  title   = {Unwilling or Unable to Cheat? {E}vidence from a Tax Audit Experiment in {D}enmark},
+  journal = {Econometrica},
+  year    = {2011}, volume = {79}, number = {3}, pages = {651--692}
+}
+@article{KlevenKreinerSaez2016,
+  author  = {Kleven, Henrik Jacobsen and Kreiner, Claus Thustrup and Saez, Emmanuel},
+  title   = {Why Can Modern Governments Tax So Much? {A}n Agency Model of Firms as Fiscal Intermediaries},
+  journal = {Economica},
+  year    = {2016}, volume = {83}, number = {330}, pages = {219--246}
+}
+@article{KopczukEtAl2016,
+  author  = {Kopczuk, Wojciech and Marion, Justin and Muehlegger, Erich and Slemrod, Joel},
+  title   = {Does Tax-Collection Invariance Hold? {E}vasion and the Pass-Through of State Diesel Taxes},
+  journal = {American Economic Journal: Economic Policy},
+  year    = {2016}, volume = {8}, number = {2}, pages = {251--286},
+  doi     = {10.1257/pol.20140271}
+}
+@article{KopczukSlemrod2006,
+  author  = {Kopczuk, Wojciech and Slemrod, Joel},
+  title   = {Putting Firms into Optimal Tax Theory},
+  journal = {American Economic Review},
+  year    = {2006}, volume = {96}, number = {2}, pages = {130--134}
+}
+@techreport{KorinekLockwood2026,
+  author      = {Korinek, Anton and Lockwood, Lee},
+  title       = {Public Finance in the Age of {AI}: A Primer},
+  institution = {National Bureau of Economic Research},
+  type        = {Working Paper},
+  number      = {34873},
+  year        = {2026},
+  url         = {https://www.nber.org/papers/w34873}
+}
+@misc{Lindrea2023,
+  author = {Lindrea, Brayden},
+  title  = {{NFT} Marketplace {O}pen{S}ea to Disable Royalty Enforcement Tool},
+  year   = {2023},
+  howpublished = {Cointelegraph, 18 August},
+  url    = {https://cointelegraph.com/news/opensea-disable-on-chain-royalty-enforcement-tool}
+}
+@misc{OKeefe2020,
+  author = {O'Keefe, Cullen and Cihon, Peter and Garfinkel, Ben and Flynn, Carrick and Leung, Jade and Dafoe, Allan},
+  title  = {The Windfall Clause: Distributing the Benefits of {AI} for the Common Good},
+  year   = {2020},
+  howpublished = {arXiv:1912.11595},
+  url    = {https://arxiv.org/abs/1912.11595}
+}
+@misc{Roughgarden2021,
+  author = {Roughgarden, Tim},
+  title  = {Transaction Fee Mechanism Design},
+  year   = {2021},
+  howpublished = {arXiv:2106.01340},
+  url    = {https://arxiv.org/abs/2106.01340}
+}
+@misc{SastryEtAl2024,
+  author = {Sastry, Girish and Heim, Lennart and Belfield, Haydn and Anderljung, Markus and Brundage, Miles and Hazell, Julian and O'Keefe, Cullen and Hadfield, Gillian K. and Ngo, Richard and Pilz, Konstantin and Gor, George and Bluemke, Emma and Shoker, Sarah and Egan, Janet and Trager, Robert F. and Avin, Shahar and Weller, Adrian and Bengio, Yoshua and Coyle, Diane},
+  title  = {Computing Power and the Governance of Artificial Intelligence},
+  year   = {2024},
+  howpublished = {arXiv:2402.08797},
+  url    = {https://arxiv.org/abs/2402.08797}
+}
+@article{Slemrod2008,
+  author  = {Slemrod, Joel},
+  title   = {Does It Matter Who Writes the Check to the Government? {T}he Economics of Tax Remittance},
+  journal = {National Tax Journal},
+  year    = {2008}, volume = {61}, number = {2}, pages = {251--275}
+}
+@article{Spengler1950,
+  author  = {Spengler, Joseph J.},
+  title   = {Vertical Integration and Antitrust Policy},
+  journal = {Journal of Political Economy},
+  year    = {1950}, volume = {58}, number = {4}, pages = {347--352}
+}
+@misc{TitanSeparation2026,
+  author = {Titan},
+  title  = {{Separating Capture from Allocation: A Commitment Model of Distribution after AI}},
+  year   = {2026},
+  howpublished = {Working paper, version 1.0}
+}
+@article{TorslovWierZucman2023,
+  author  = {T{\o}rsl{\o}v, Thomas and Wier, Ludvig and Zucman, Gabriel},
+  title   = {The Missing Profits of Nations},
+  journal = {Review of Economic Studies},
+  year    = {2023}, volume = {90}, number = {3}, pages = {1499--1534},
+  doi     = {10.1093/restud/rdac049}
+}
+@misc{Wielechowski2017,
+  author = {{Alaska Supreme Court}},
+  title  = {Wielechowski v. {S}tate of {A}laska, {N}o. {S}-16558},
+  year   = {2017},
+  howpublished = {Opinion of 25 August},
+  url    = {https://law.justia.com/cases/alaska/supreme-court/2017/s-16558.html}
+}
+\end{filecontents*}
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{groupplots,fillbetween}
+\usetikzlibrary{calc}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+
+\hypersetup{
+  pdftitle={Binding at the Bottleneck: An Enforcement Model of Distribution after AI},
+  pdfauthor={\PaperAuthor},
+  pdfkeywords={enforcement, evasion, bottleneck, compute, distribution, artificial intelligence, transaction fees}
+}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.4em}
+\linespread{1.06}
+\setlist{nosep,leftmargin=2.2em}
+\setlength{\bibsep}{4pt}
+\urlstyle{same}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+
+% figure palette: three hues plus line style, so identity never rests on colour alone
+\definecolor{twoc}{HTML}{2A78D6}
+\definecolor{outc}{HTML}{EB6834}
+\definecolor{botc}{HTML}{1BAF7A}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inksoft}{HTML}{52514E}
+\definecolor{axisgray}{HTML}{8A8984}
+\definecolor{gridgray}{HTML}{E4E3DE}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\E}{\mathbb{E}}
+
+\title{\textbf{Binding at the Bottleneck:\\[2pt]
+An Enforcement Model of Distribution after AI}}
+\author{\PaperAuthor\thanks{\PaperAffiliation. This paper continues
+\citet{TitanSeparation2026}. A script, \texttt{verify\_bottleneck.py}, that checks every
+closed-form result in the paper, exactly or by brute-force optimization, is distributed
+with it.}}
+\date{\PaperDate\\[2pt]{\small \PaperVersion}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent A rule that shares the output of machines pays only what it can collect. A
+companion paper showed that a dividend on autonomous output requires a rule fixed in
+advance, observable, and independent of the capturer, and assumed that the rule could not
+be evaded. This paper drops that assumption: capturers can route output around the rule
+at a cost. Four results follow. First, a rule collects at most what it costs to bypass,
+so a separated rule over an easily bypassed base pays nothing. Second,
+when capturers are identical it does not matter where along the production chain the rule
+binds; only the bypass costs matter, and those of different points add up. Third, when
+capturers differ in productivity, a levy on an essential input cannot track their rents,
+and the best rule has two parts: a share of output up to its bypass cost, and a levy at
+the bottleneck that makes up the shortfall at average productivity. Fourth, an unregulated
+owner of the bottleneck charges exactly the levy that recipients would choose for
+themselves, and keeps it. The rule has to bind at the bottleneck and be separated from
+whoever owns it.
+
+\medskip
+\noindent\textbf{Keywords:} enforcement; evasion; bottleneck; compute; distribution;
+artificial intelligence; transaction fees.
+
+\noindent\textbf{JEL:} D23, H21, H26, L12, O33.
+\end{abstract}
+
+% ----------------------------------------------------------------------------
+\section{Introduction}
+% ----------------------------------------------------------------------------
+
+A rule can share only what passes through it. \citet{TitanSeparation2026}, the companion
+to this paper, asked who may set the rule that divides the output of machines. Its answer
+was three conditions, called the separation of capture from allocation: the rule is fixed
+before investment, observable, and set by a party that does not side with the capturer.
+The first condition asked that no one be able to revise the rule \emph{or evade it}. That
+paper studied revision and assumed evasion away. This paper is about evasion.
+
+The two failures are different, and each occurs without the other
+(Table~\ref{tab:twobytwo}). A rule can be beyond anyone's power to change and still be
+walked around. A rule can be impossible to escape and still be rewritten every year.
+Either failure is enough to end the dividend.
+
+\begin{table}[b]
+\centering
+\caption{Two ways a rule fails, with one case of each. Sources are in
+Section~\ref{sec:find} and in the companion paper.}
+\label{tab:twobytwo}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}@{}}
+\toprule
+ & \textbf{Hard to evade} & \textbf{Easy to evade}\\
+\midrule
+\textbf{Hard to revise} & Base fee burned under EIP-1559: paid on every transaction
+since 2021 & Creator royalties on NFTs: set by the creator, skipped by marketplaces\\
+\textbf{Easy to revise} & Alaska's dividend: funded by mineral royalties, reset in each
+budget & Voluntary corporate pledge\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Evasion raises a question that revision does not: \emph{where} should the rule bind?
+Production is a chain. Chips and energy become compute; compute becomes output; output is
+sold; the sale becomes profit. A levy can be collected at any link. The textbook says the
+choice of link is irrelevant, and that is right as long as no link can be bypassed
+\citep{Slemrod2008}. When links differ in how cheaply they can be walked around, the
+choice decides how much is collected \citep{KopczukEtAl2016}. The literature on tax
+evasion has worked out the logic: the best rate on a base depends on how easily the base
+is hidden \citep{CremerGahvari1993}, a blunt base that cannot be hidden is worth combining
+with a precise one that can \citep{BoadwayMarchandPestieau1994,BestEtAl2015}, and
+enforcement works through the few parties who remit and report
+\citep{KopczukSlemrod2006,KlevenKreinerSaez2016}. For AI, compute has been singled out as
+the point at which the technology can be governed \citep{SastryEtAl2024}, and taxes on
+robots, compute and tokens have been studied as sources of revenue
+\citep{GuerreiroRebeloTeles2022,KorinekLockwood2026}.
+
+I add a cost of bypass to the companion model and obtain four results. A rule collects at
+most what it costs to get around it (Proposition~\ref{prop:bound}). With identical
+capturers the place where the rule binds is irrelevant except for that cost, and the
+costs at different points add up (Proposition~\ref{prop:inv}). With capturers of
+different productivity the best rule has two parts, a share of output as far as it can be
+enforced and a levy on the essential input for the rest
+(Proposition~\ref{prop:two}). And the owner of the bottleneck is already collecting the
+levy that recipients would choose (Proposition~\ref{prop:owner}).
+
+None of the machinery is new. The contribution is a set of closed forms for the
+post-labor case, and one link that the two literatures leave apart: the point at which a
+rule can be enforced is the point whose owner is best placed to capture.
+
+% ----------------------------------------------------------------------------
+\section{Model}
+% ----------------------------------------------------------------------------
+
+A unit mass of capturers differ in productivity $A$, which has mean $\mu$, variance $s^2$
+and a support bounded below by $\mu/2$.\footnote{The bound keeps every capturer active
+under every rule considered below.} A capturer of type $A$ chooses an amount $k\ge 0$ of
+an essential input, which I call \emph{compute}, at private cost $k^2/2$, and produces
+autonomous output $Ak$. Human contributions are set aside: in the companion paper they
+are additively separable, and nothing below depends on them.
+
+\paragraph{Rule.} A rule $(\sigma,\tau)$ can bind at two points of the chain. At the
+\emph{output point} it takes a share $\sigma$ of the output that passes. At the
+\emph{input point} it takes $\tau$ per unit of compute that passes. What is collected is
+the dividend $D$, paid equally to a unit mass of individuals.
+
+\paragraph{Bypass.} A capturer can route output around the output point at a cost
+$\kappa\in(0,1)$ per unit routed, and compute around the input point at a cost $b>0$ per
+unit routed. What goes around a point pays nothing there. The costs stand for the
+cheapest way around, whatever it is: concealment, an intermediary, a move to another
+venue, or, at the input point, a substitute for the levied input. I call $\kappa$ and $b$
+\emph{bypass costs}, and a point with a high bypass cost a \emph{bottleneck}. With $h_o$
+and $h_i$ the shares routed, a capturer earns
+\begin{equation}
+  \Pi \;=\; Ak\,\bigl[1-(1-h_o)\sigma-h_o\kappa\bigr]
+        \;-\;k\,\bigl[(1-h_i)\tau+h_i b\bigr]\;-\;\half k^2 .
+\end{equation}
+
+\paragraph{Setter.} Allocation is separated from capture in the sense of the companion
+paper: the rule is fixed and observed before capturers act, by a setter who maximizes
+$\E[\Pi]+\omega D$ with $\omega>1$. Recall the share that such a setter chooses when
+nothing can be evaded,
+\begin{equation}
+  \sigma^*=\frac{\omega-1}{2\omega-1}<\frac12 .
+\end{equation}
+Two pieces of notation save space. Let $\Gamma$ denote the setter's gain over having no
+rule, and let
+\begin{equation}
+  \gamma^*=\frac{(\omega-1)^2}{2(2\omega-1)}, \qquad e(x)=x(2-x)\quad\text{for }x\in[0,1].
+\end{equation}
+With perfect enforcement $\Gamma=\gamma^*\,\E[A^2]$. The function $e$ rises from $0$ to
+$1$ and will measure how much of that gain an imperfectly enforced levy achieves.
+
+% ----------------------------------------------------------------------------
+\section{Results}
+% ----------------------------------------------------------------------------
+
+\subsection{The bypass bound}
+
+\begin{proposition}[Bypass bound]\label{prop:bound}
+(i) A capturer routes all of its output around the output point if $\sigma>\kappa$ and
+none if $\sigma\le\kappa$; likewise for compute and $b$. A levy above the bypass cost
+collects nothing, and the setter never sets one. (ii) If the rule binds only at the
+output point, the setter chooses $\hat\sigma=\min\{\sigma^*,\kappa\}$ and
+\begin{equation}
+  D=\hat\sigma(1-\hat\sigma)\,\E[A^2]\;\le\;\kappa\,\E[A^2].
+\end{equation}
+As $\kappa\to 0$ the dividend vanishes, although allocation is separated.
+\end{proposition}
+
+A rule collects at most what it costs to get around it.\footnote{The cap is sharp because
+bypass costs are linear. If routing a share $h$ of output costs $\kappa h^2/2$ per unit
+instead, the capturer routes $h=\sigma/\kappa$ and the collected share
+$\sigma(1-\sigma/\kappa)$ is at most $\kappa/4$. The cap becomes soft; the bound
+remains.} The companion paper found that a capturer shares only in proportion to what
+individuals can withhold. The counterpart here is that a rule collects only in proportion
+to what capturers cannot avoid. Separation settles who decides the share. The bypass cost
+settles whether the decision matters.
+
+\subsection{Does it matter where the rule binds?}
+
+\begin{proposition}[Invariance]\label{prop:inv}
+Let capturers be identical ($s=0$). Investment, profit and dividend depend on the rule
+only through the total wedge $w=\sigma\mu+\tau$, so rules with the same wedge are
+equivalent wherever they bind. The largest wedge that can be collected is
+$\kappa\mu+b$, and
+\begin{equation}
+  D=\hat t\,(1-\hat t)\,\mu^2, \qquad \hat t=\min\bigl\{\sigma^*,\ \kappa+b/\mu\bigr\}.
+\end{equation}
+\end{proposition}
+
+With identical capturers the textbook is right: it makes no difference whether the levy
+is taken from output or from the input that produces it. What differs between points is
+only how much can be taken before capturers go around, and here the points help each
+other. Bypassing one point does not bypass another, so the wedges that can be collected
+add up. A rule that binds at several points is harder to escape than a rule that binds at
+the best of them.\footnote{This needs the ways around to be separate. If a single
+action, such as leaving the venue, bypasses every point at once, its cost caps the total;
+Proposition~\ref{prop:floor} takes this up.}
+
+\subsection{The two-part rule}
+
+Capturers are not identical, and this is where the points stop being equivalent. A share
+of output charges each capturer in proportion to what it produces. A levy on compute
+charges every unit of compute the same, whatever it produces.
+
+\begin{proposition}[Two-part rule]\label{prop:two}
+Let $s>0$. If $\kappa\ge\sigma^*$, the optimal rule is $\sigma=\sigma^*$, $\tau=0$. If
+$\kappa<\sigma^*$, it is
+\begin{equation}\label{eq:two}
+  \sigma=\kappa, \qquad \tau=\min\bigl\{b,\ \mu(\sigma^*-\kappa)\bigr\}.
+\end{equation}
+When $b\ge\mu(\sigma^*-\kappa)$, the dividend and the setter's gain are
+\begin{equation}\label{eq:split}
+  D=\sigma^*(1-\sigma^*)\,\mu^2+\kappa(1-\kappa)\,s^2, \qquad
+  \Gamma=\gamma^*\bigl[\mu^2+e(\kappa/\sigma^*)\,s^2\bigr].
+\end{equation}
+\end{proposition}
+
+The output share is used as far as it can be enforced, because it is the only instrument
+that follows the differences between capturers. The levy at the bottleneck makes up what
+is missing, at average productivity. The result splits cleanly. On the average capturer
+the rule achieves everything it would achieve with perfect enforcement. On the
+differences between capturers it achieves the fraction $e(\kappa/\sigma^*)$. The whole
+loss from evasion is then $\gamma^*(1-\kappa/\sigma^*)^2s^2$: proportional to the
+dispersion of productivity, and to the square of what the output point fails to enforce.
+
+\begin{corollary}[One point only]\label{cor:one}
+Suppose the rule can bind at only one point. Let $x=\min\{1,\kappa/\sigma^*\}$,
+$y=\min\{1,b/(\sigma^*\mu)\}$ and $cv=s/\mu$. The setter's gain is
+$\gamma^*(\mu^2+s^2)\,e(x)$ at the output point and $\gamma^*\mu^2\,e(y)$ at the input
+point, so the input point is better if and only if
+\begin{equation}
+  e(y)\;>\;(1+cv^2)\,e(x).
+\end{equation}
+If the input point can enforce the full levy ($y=1$), this is
+$\kappa/\sigma^*<1-cv/\sqrt{1+cv^2}$.
+\end{corollary}
+
+The bottleneck trades targeting for enforcement. It wins when capturers are alike or the
+output point is easy to get around, and loses when rents sit with a few capturers that a
+uniform levy cannot reach (Figure~\ref{fig:main}). This is the trade-off between profit
+and turnover taxes where evasion is common \citep{BestEtAl2015}, and the reason for
+mixing direct and indirect taxes \citep{BoadwayMarchandPestieau1994}, with compute in the
+place of turnover.
+
+An example fixes magnitudes. Let $\omega=2$, so that $\sigma^*=\frac13$; let $cv=0.75$;
+and let the output point enforce a share of no more than $\kappa=0.1$. A rule at the
+output point alone then achieves 51 per cent of the gain available under perfect
+enforcement, a rule at the bottleneck alone 64 per cent, and the two-part rule 82 per
+cent.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=2.0cm},
+    width=0.485\textwidth, height=5.8cm,
+    axis lines=left,
+    axis line style={line width=0.4pt, draw=axisgray},
+    tick style={line width=0.4pt, draw=axisgray},
+    tick align=outside,
+    ticklabel style={font=\footnotesize, text=ink},
+    label style={font=\footnotesize, text=ink},
+    title style={font=\footnotesize, text=ink, yshift=-1pt},
+    ymajorgrids, grid style={line width=0.3pt, draw=gridgray},
+    clip=false,
+]
+% ---------------- panel (a)
+\nextgroupplot[
+    title={(a) Share of the full-enforcement gain ($cv=0.75$)},
+    xlabel={enforceability of the output point, $\kappa/\sigma^*$},
+    xmin=0, xmax=1, ymin=0, ymax=1.08,
+    xtick={0,0.2,0.4,0.6,0.8,1},
+    ytick={0,0.25,0.5,0.75,1},
+    yticklabels={$0$,$0.25$,$0.5$,$0.75$,$1$},
+]
+\draw[gridgray!60!axisgray, line width=0.4pt] (axis cs:0.4,0) -- (axis cs:0.4,0.64);
+\addplot[outc, line width=1.2pt, dashed, domain=0:1, samples=100] {x*(2-x)};
+\addplot[botc, line width=1.2pt, dashdotted, domain=0:1, samples=2] {0.64};
+\addplot[twoc, line width=1.4pt, domain=0:1, samples=100]
+    {(1+0.5625*x*(2-x))/1.5625};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.02,0.80)
+    {two-part rule};
+\node[font=\scriptsize, text=ink, anchor=north west] at (axis cs:0.52,0.625)
+    {bottleneck only};
+\node[font=\scriptsize, text=ink, anchor=west] at (axis cs:0.43,0.33)
+    {output only};
+% ---------------- panel (b)
+\nextgroupplot[
+    title={(b) Which single point is better},
+    xlabel={dispersion of productivity, $cv$},
+    ylabel={$\kappa/\sigma^*$},
+    ylabel style={at={(axis description cs:-0.13,0.5)}},
+    xmin=0, xmax=2, ymin=0, ymax=1.08,
+    xtick={0,0.5,1,1.5,2},
+    ytick={0,0.25,0.5,0.75,1},
+    yticklabels={$0$,$0.25$,$0.5$,$0.75$,$1$},
+]
+\addplot[name path=thr, inksoft, line width=1.2pt, domain=0:2, samples=120]
+    {1-x/sqrt(1+x^2)};
+\path[name path=floor] (axis cs:0,0) -- (axis cs:2,0);
+\addplot[botc, opacity=0.13] fill between[of=thr and floor];
+\addplot[only marks, mark=*, mark size=1.8pt, inksoft] coordinates {(0.75,0.4)};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.82,0.62)
+    {output point better};
+\node[font=\scriptsize, text=ink, anchor=south west] at (axis cs:0.06,0.06)
+    {bottleneck better};
+\node[font=\scriptsize, text=inksoft, anchor=west] at (axis cs:0.79,0.42)
+    {panel (a) tie};
+\end{groupplot}
+% legend for panel (a)
+\coordinate (L) at ($(group c1r1.south west)!0.5!(group c1r1.south east)+(0,-1.4cm)$);
+\draw[twoc, line width=1.4pt] ($(L)+(-3.3,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {two-part rule};
+\draw[outc, line width=1.2pt, dashed] ($(L)+(-0.75,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {output only};
+\draw[botc, line width=1.2pt, dashdotted] ($(L)+(1.7,0)$) -- ++(0.6,0)
+    node[right, text=ink, font=\scriptsize] {bottleneck only};
+\end{tikzpicture}
+\caption{Targeting against enforcement, with a bottleneck that can enforce the full levy.
+(a) The share of the setter's full-enforcement gain achieved by each rule as the output
+point becomes harder to bypass. The two single-point rules tie at
+$\kappa/\sigma^*=0.4$; the two-part rule dominates both
+(Proposition~\ref{prop:two}). (b) Below the curve $1-cv/\sqrt{1+cv^2}$ a rule confined
+to one point should bind at the bottleneck (Corollary~\ref{cor:one}).}
+\label{fig:main}
+\end{figure}
+
+\subsection{Floors}
+
+\begin{proposition}[Floors]\label{prop:floor}
+Suppose the way around the output point is to move to another venue, at a cost $\kappa$
+per unit, and every other venue takes a share of at least $\varphi$. Then the rule
+collects any share $\sigma\le\varphi+\kappa$.
+\end{proposition}
+
+A floor common to all venues adds to each venue's bypass cost one for one. Without a
+floor, a single venue that takes nothing holds every other venue to the cost of moving,
+which is the logic of tax competition \citep{KeenKonrad2013}; forks of a protocol and
+low-tax jurisdictions play the same part. A bottleneck that cannot move needs no floor,
+which is a second reason to bind there.
+
+\subsection{Who owns the bottleneck}
+
+So far the bottleneck has had no owner. Suppose instead that compute is supplied by a
+single owner at zero marginal cost, who sets a price $m$ per unit after the rule is fixed
+and before capturers invest. Capturers are identical, and the bottleneck cannot be
+bypassed.
+
+\begin{proposition}[The owner of the bottleneck]\label{prop:owner}
+(i) With no rule the owner charges $m=\mu/2$ and earns $\mu^2/4$. This is the levy, and
+the dividend, that recipients would choose for themselves at the bottleneck. (ii) Facing
+a levy $\tau$, the owner charges $m=(\mu-\tau)/2$. The dividend is
+$\tau(\mu-\tau)/2$, at most $\mu^2/8$. The setter's optimal levy is
+\begin{equation}
+  \tau=\frac{2\omega-3}{4\omega-3}\,\mu \quad\text{if }\omega>\tfrac32,
+  \qquad \tau=0\quad\text{otherwise}.
+\end{equation}
+(iii) A share $\rho$ of the owner's revenue changes neither its price nor investment
+downstream.
+\end{proposition}
+
+An unregulated bottleneck is a private levy, at the rate recipients would set, paid to
+its owner. A public levy placed on top of it stacks one margin on another
+\citep{Spengler1950}. The wedge grows, investment falls, and even a setter who cares only
+for recipients collects half of what the owner collected alone. A setter with
+$\omega\le\frac32$ adds nothing at all. The remedy is to claim the first levy rather than
+add a second: a share of the owner's revenue, or a price set by rule with the proceeds
+taken out of the owner's hands. The second is what EIP-1559 did with block space
+\citep{Buterin2019}. Either way the owner of the bottleneck now stands where the capturer
+stood in the companion paper, and its three conditions apply to the owner. What makes a
+point a good place to bind---few suppliers and no way around---is what makes its owner a
+capturer.
+
+% ----------------------------------------------------------------------------
+\section{Finding the bottleneck}\label{sec:find}
+% ----------------------------------------------------------------------------
+
+The model says what to measure: the cost of getting around each point, and how unequal
+capturers are. Table~\ref{tab:evidence} collects cases in which the same levy was
+collected at different points, or in which a rule was bound at one point and bypassed.
+
+\begin{table}[t]
+\centering
+\caption{Where rules have been bound, and what happened.}
+\label{tab:evidence}
+\small
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
+\toprule
+Rule & Point at which it binds & Outcome & Source\\
+\midrule
+Income tax, Denmark & Self-report, against report by a third party & Evasion of 37\% of
+self-reported income and 0.3\% of third-party-reported income & \citet{KlevenEtAl2011}\\
+Corporate tax, worldwide & Profit, booked where the firm chooses & 36\% of multinational
+profits shifted to tax havens & \citet{TorslovWierZucman2023}\\
+Corporate tax, Pakistan & Profit, against turnover & Turnover taxes cut evasion by up to
+60--70\% of corporate income & \citet{BestEtAl2015}\\
+Diesel tax, US states & Retailer, against upstream supplier & Collecting upstream raises
+revenue and pass-through & \citet{KopczukEtAl2016}\\
+Creator royalty on NFTs & Marketplace & Largest marketplace enforced 0.5\% where creators
+had set 5--10\%; weekly payments fell from about 28,000 to about 2,000 ETH &
+\citet{Akers2023}\\
+Base fee, Ethereum & Block space; an unpaid block is invalid & Burned on every
+transaction; not undone by side payments & \citet{Roughgarden2021}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four features recur where rules have held. The step is essential, so there is no
+substitute for it. Few parties perform it. Someone other than the payer meters it. And it
+cannot move.
+
+\paragraph{On a public ledger.} The creator royalty on non-fungible tokens is the
+cleanest test. The rate was set by the creator in advance and was public, and no one
+rewrote it. But payment was left to the marketplaces on which tokens changed hands. Once some marketplaces made the royalty optional, trading
+moved to them. By August 2023 the largest marketplace by volume enforced a minimum of
+0.5\%, where creators had typically set 5 to 10\%, and weekly royalty payments had fallen
+from about 28,000 ETH at their peak in April 2022 to about 2,000 ETH in June 2023, in a
+market that had also shrunk \citep{Akers2023}. A tool that let creators block marketplaces that did not pay
+was itself bypassed, by routing trades through a protocol that was not blocked, and was
+withdrawn in August 2023 \citep{Lindrea2023}. Proposition~\ref{prop:bound} reads the
+episode directly: creators asked for 5 to 10 per cent at a point that cost a trader almost
+nothing to walk around, and what survived was the half per cent that the largest
+marketplace chose to enforce. The base fee of EIP-1559 is the contrast.
+It is charged for block space, which every transaction needs, and a block that does not
+pay it is invalid. Because the fee is burned, block producer and user cannot undo it with
+a side payment \citep{Roughgarden2021}. The royalty bound at a point that trades could
+walk around; the base fee binds at a step no transaction can avoid.
+
+\paragraph{Off the ledger.} Alaska shows the other half of Table~\ref{tab:twobytwo}. Its
+fund receives a share of mineral royalties fixed in the state constitution
+\citep{APFC2026}, a base that is measured where it is extracted and cannot leave. Collection has
+never been the problem. The dividend fell to about a quarter of its statutory formula in
+2025 because the amount can be reset in each budget
+\citep{Wielechowski2017,AlaskaPublic2025}. A voluntary pledge \citep{OKeefe2020} fails on
+both counts.
+
+\paragraph{Compute.} For autonomous production the candidate points run from profit,
+through revenue and metered usage, back to compute and energy. Table~\ref{tab:evidence}
+suggests the order of their bypass costs: profit is the cheapest base to move, and bases
+reported by the payer alone are the cheapest to hide. A levy on metered usage binds at
+the provider's interface, and model weights that can be run elsewhere are the way around
+it. \citet{SastryEtAl2024} argue that
+compute is the point at which AI can be governed because it is ``detectable, excludable,
+and quantifiable'' and comes from ``an extremely concentrated supply chain''---in the
+terms used here, a high $b$. The model adds three cautions. Compute is a blunt base: a
+levy on it secures the average and misses the dispersion
+(Proposition~\ref{prop:two}). Bypass costs are not constants: more efficient algorithms
+substitute for compute, and a levy is a reason to look for them. And concentration cuts
+both ways (Proposition~\ref{prop:owner}). The same authors warn that poorly scoped
+governance of compute carries risks for privacy and for the concentration of power.
+
+\paragraph{Design.} Read as instructions for a protocol, the propositions say four
+things. Bind at a step every unit must take---inclusion in a block, the transfer function
+of the asset itself---and not at a venue that users can leave
+(Proposition~\ref{prop:bound}). Bind at more than one step where the ways around are
+separate, because their costs add (Proposition~\ref{prop:inv}). Use the precise base for
+what it can carry and the blunt one for the rest (Proposition~\ref{prop:two}). And take
+the proceeds out of the hands of whoever operates the step at which the rule binds
+(Proposition~\ref{prop:owner}). Where there is no bottleneck, a floor shared across forks
+or venues is the substitute (Proposition~\ref{prop:floor}).
+
+\paragraph{A fourth question.} The companion paper turned separation into three questions
+about a scheme: who can change the rule, who can see it, and who keeps the remainder.
+Enforcement adds a fourth.
+\begin{enumerate}[label=Q\arabic*.,leftmargin=2.6em,start=4]
+\item What does it cost to move a unit of the base around the rule, and does the rule ask
+      for less than that?
+\end{enumerate}
+A rule that asks for more than its bypass cost is a rule on paper. And the third question
+has to be asked again at the point where the rule binds: who owns that point, and do they
+keep what is collected there?
+
+% ----------------------------------------------------------------------------
+\section{Limits and conclusion}
+% ----------------------------------------------------------------------------
+
+The model is deliberately small. Bypass costs are linear and given; in practice they are
+convex, differ across capturers, and fall as capturers learn, so that a point is a
+bottleneck for a time rather than for good. There is one essential input. With several
+inputs a levy on one of them also distorts the mix \citep{DiamondMirrlees1971}, a cost
+the bypass cost $b$ captures only when the substitute is a perfect one. The setter knows
+the distribution of productivity. The owner of the bottleneck has no investment of its
+own, which is why a share of its revenue appears costless; with investment, the
+companion model applies to it and the share is bounded as before. And nothing here is
+measured: Table~\ref{tab:evidence} gives the direction of the effects, not the size of
+$\kappa$ or $b$ for any point in the production of AI.
+
+The companion paper asked who may set the rule. This paper asks where the rule must bind.
+The answers have the same shape. A rule pays a dividend only if it is out of the
+capturer's hands and in the capturer's way: beyond its power to revise, and across a step
+it cannot walk around. The second requirement pulls the rule toward the narrowest point
+of the production chain, and the narrowest point is where capture is most complete. A
+rule that binds at the bottleneck without being separated from its owner has only moved
+the enclosure upstream.
+
+% ----------------------------------------------------------------------------
+\appendix
+\section{Proofs}
+% ----------------------------------------------------------------------------
+
+\begin{proof}[Proof of Proposition~\ref{prop:bound}]
+(i) $\Pi$ is linear in $h_o$ with slope $Ak(\sigma-\kappa)$ and in $h_i$ with slope
+$k(\tau-b)$, so each share routed is $0$ or $1$ as stated, ties being broken toward
+compliance. The capturer's burden per unit of output is $\min\{\sigma,\kappa\}$. If
+$\sigma>\kappa$, lowering $\sigma$ to $\kappa$ leaves every capturer's payoff and
+investment unchanged and raises collections from zero to $\kappa Ak$; the same holds for
+$\tau$ and $b$. (ii) With $\tau=0$ and $\sigma\le\kappa$, a capturer chooses
+$k=(1-\sigma)A$, so $\E[\Pi]+\omega D=\E[A^2]\,g(\sigma)$ with
+$g(\sigma)=\half(1-\sigma)^2+\omega\sigma(1-\sigma)$, which is concave and maximized at
+$\sigma^*$. Hence $\hat\sigma=\min\{\sigma^*,\kappa\}$ and
+$D=\hat\sigma(1-\hat\sigma)\E[A^2]$.
+\end{proof}
+
+For the remaining proofs, restrict attention to $\sigma\le\kappa$ and $\tau\le b$, which
+is without loss by Proposition~\ref{prop:bound}. A capturer of type $A$ then faces the
+wedge $w=\sigma A+\tau$ and chooses $k=A-w>0$, earning $\half k^2$ and paying $wk$.
+Subtracting the value $\half\E[A^2]$ of having no rule gives the setter's gain
+\begin{equation}\label{eq:gain}
+  \Gamma(\sigma,\tau)=\E\bigl[(\omega-1)Aw-\half(2\omega-1)w^2\bigr].
+\end{equation}
+For a common proportional wedge $w=tA$ this is
+$\E[A^2]\,\gamma^*e(t/\sigma^*)$, and for identical capturers
+$\Gamma=\mu^2\gamma^*e\bigl(w/(\sigma^*\mu)\bigr)$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:inv}]
+With $A=\mu$ for all capturers, $k=\mu-w$, $\Pi=\half k^2$ and $D=wk$ depend on the rule
+only through $w$. The feasible wedges are those with $\sigma\le\kappa$ and $\tau\le b$,
+that is, $w\le\kappa\mu+b$. $\Gamma$ is concave in $w$ with its maximum at $\sigma^*\mu$,
+so the optimal wedge is $\hat t\mu$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:two}]
+From \eqref{eq:gain}, $\Gamma$ is concave in $(\sigma,\tau)$, strictly so when $s>0$, with
+\[
+  \frac{\partial\Gamma}{\partial\sigma}
+     =(2\omega-1)\bigl[(\sigma^*-\sigma)(\mu^2+s^2)-\tau\mu\bigr], \qquad
+  \frac{\partial\Gamma}{\partial\tau}
+     =(2\omega-1)\bigl[(\sigma^*-\sigma)\mu-\tau\bigr].
+\]
+Both vanish at $(\sigma^*,0)$, which is feasible if $\kappa\ge\sigma^*$. If
+$\kappa<\sigma^*$, evaluate at $\sigma=\kappa$ and
+$\hat\tau=\min\{b,\mu(\sigma^*-\kappa)\}$. Then $\partial\Gamma/\partial\tau\ge 0$, with
+equality unless $\hat\tau=b$, and
+$\partial\Gamma/\partial\sigma\ge(2\omega-1)(\sigma^*-\kappa)s^2>0$. These are the
+Kuhn--Tucker conditions for the constraints $\sigma\le\kappa$ and $\tau\le b$, so
+\eqref{eq:two} is the optimum. Substituting into $D=\E[w(A-w)]$ and \eqref{eq:gain} gives
+\eqref{eq:split}. In general, with $x=\kappa/\sigma^*$ and
+$z=\hat\tau/\bigl(\mu(\sigma^*-\kappa)\bigr)$,
+$\Gamma=\gamma^*\bigl[(\mu^2+s^2)e(x)+\mu^2(1-x)^2e(z)\bigr]$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:one}]
+At the output point alone, $w=\hat\sigma A$ and $\Gamma=\gamma^*(\mu^2+s^2)e(x)$. At the
+input point alone, $w=\tau$ and \eqref{eq:gain} gives
+$\Gamma=(\omega-1)\mu\tau-\half(2\omega-1)\tau^2$, which is maximized over $\tau\le b$ at
+$\min\{b,\sigma^*\mu\}$ and equals $\gamma^*\mu^2e(y)$ there. Comparing the two gives the
+condition. If $y=1$ it reads $e(x)<1/(1+cv^2)$, that is,
+$(1-x)^2>cv^2/(1+cv^2)$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:floor}]
+A capturer that stays gives up $\sigma$ per unit of output. One that moves gives up
+$\varphi+\kappa$. It stays if and only if $\sigma\le\varphi+\kappa$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:owner}]
+A capturer facing price $m$ and levy $\tau$ chooses $k=\mu-\tau-m$. The owner maximizes
+$(1-\rho)\,m(\mu-\tau-m)$ and so sets $m=(\mu-\tau)/2$ for any $\rho<1$, which is (iii).
+With $\tau=0$ this is $m=\mu/2$ and revenue $\mu^2/4$. A levy $\tau$ at an unowned
+bottleneck yields $\tau(\mu-\tau)$, which is largest at $\tau=\mu/2$, where it equals
+$\mu^2/4$; this is also the limit of the setter's choice $\sigma^*\mu$ as
+$\omega\to\infty$. That gives (i). For (ii), $k=m=(\mu-\tau)/2$, so $D=\tau k\le\mu^2/8$,
+and the setter's objective, with the owner's profit weighted as a capturer's, is
+$\half k^2+mk+\omega\tau k=\tfrac38(\mu-\tau)^2+\half\omega\tau(\mu-\tau)$. It is concave
+for $\omega>1$, and its derivative at $\tau=0$ is $\tfrac14(2\omega-3)\mu$. The
+first-order condition gives the stated levy when $\omega>\frac32$.
+\end{proof}
+
+\bibliographystyle{plainnat}
+\bibliography{bottleneck}
+
+\end{document}
