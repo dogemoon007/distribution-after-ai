@@ -11,12 +11,6 @@
 ## 编译
 `latexmk -pdf bottleneck.tex`；`latexmk -xelatex bottleneck-zh.tex`。Overleaf 上传单个 .tex 即可。
 
-## 投稿前
-1. .tex 顶部宏：署名、单位、日期。
-2. 参考文献 TitanSeparation2026：第一篇上传 SSRN 后补上链接或编号。
-3. 本版不含“声明”一节。投期刊时，利益冲突与 AI 使用须按期刊要求如实填写。
-4. 首页脚注写明脚本随论文发布，上传时请把 `verify_bottleneck.py` 一起放上去。
-
 ## 字数（英文）
 正文 2,800 词左右，附录约 370 词，合计约 3,200 词。Ledger 研究论文上限 4,000 词。
 
