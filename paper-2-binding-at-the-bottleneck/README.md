@@ -12,7 +12,7 @@
 `latexmk -pdf bottleneck.tex`；`latexmk -xelatex bottleneck-zh.tex`。Overleaf 上传单个 .tex 即可。
 
 ## 字数（英文）
-正文 2,800 词左右，附录约 370 词，合计约 3,200 词。Ledger 研究论文上限 4,000 词。
+正文 2,800 词左右，附录约 370 词，合计约 3,200 词。
 
 ## SHA-256
 - 英文 PDF：`2c5211163a3814897ca3091e25cfae2be5ac1b2a572bfbd13e0c0a8fe5180339`
